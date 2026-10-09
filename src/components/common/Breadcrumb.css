@@ -1,0 +1,46 @@
+.institutional-breadcrumb {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.45rem 1rem;
+  background-color: var(--surface-soft);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+  margin-bottom: 2rem;
+  font-size: 0.85rem;
+}
+
+[data-theme="dark"] .institutional-breadcrumb {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.breadcrumb-link {
+  color: var(--text-secondary);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  transition: color var(--transition-fast);
+}
+
+.breadcrumb-link:hover {
+  color: var(--text-primary);
+}
+
+.home-crumb {
+  color: var(--text-muted);
+}
+
+.crumb-sep {
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+.crumb-current {
+  color: var(--blue-700);
+  font-weight: 600;
+}
+
+[data-theme="dark"] .crumb-current {
+  color: var(--green-400);
+}

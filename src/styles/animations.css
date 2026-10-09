@@ -1,0 +1,55 @@
+@keyframes flowDash {
+  to {
+    stroke-dashoffset: -40;
+  }
+}
+
+@keyframes pulseSubtle {
+  0%, 100% {
+    opacity: 0.35;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.08);
+  }
+}
+
+@keyframes floatGentle {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.anim-flow-line {
+  stroke-dasharray: 6 6;
+  animation: flowDash 3.5s linear infinite;
+}
+
+.anim-pulse-subtle {
+  animation: pulseSubtle 3s ease-in-out infinite;
+}
+
+.anim-float {
+  animation: floatGentle 5s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .anim-flow-line,
+  .anim-pulse-subtle,
+  .anim-float {
+    animation: none !important;
+  }
+}

@@ -1,0 +1,267 @@
+/* ============================================================
+   DOMESTIC TRADE FINANCE STYLES
+   Human-designed corporate styling, clean sections, real photography
+============================================================ */
+
+/* 2. Intro Section */
+.domestic-intro-section {
+  background-color: var(--white);
+  border-bottom: 1px solid var(--border);
+}
+
+.domestic-intro-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.domestic-highlight-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  margin: 1.5rem 0 2rem;
+}
+
+.highlight-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--navy-900);
+}
+
+.highlight-icon {
+  color: var(--green-600);
+  flex-shrink: 0;
+}
+
+/* 3. Featured Section: Inland LC */
+.inland-lc-section {
+  background-color: var(--gray-50);
+  border-bottom: 1px solid var(--border);
+}
+
+.inland-lc-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.inland-bullets-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  margin: 1.5rem 0 2rem;
+}
+
+.inland-bullet-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--navy-950);
+}
+
+.bullet-icon {
+  color: var(--green-600);
+  margin-top: 0.2rem;
+  flex-shrink: 0;
+}
+
+.inland-cta-row {
+  display: flex;
+  align-items: center;
+}
+
+/* 4. Process Section */
+.domestic-process-section {
+  background-color: var(--white);
+  border-bottom: 1px solid var(--border);
+}
+
+.process-steps-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+.process-step-card {
+  background: var(--gray-50);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 2.25rem 1.75rem;
+  transition: transform var(--transition-base), border-color var(--transition-base);
+}
+
+.process-step-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--navy-300);
+}
+
+.step-number-badge {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--navy-800);
+  background: var(--navy-100);
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-sm);
+  margin-bottom: 1rem;
+}
+
+.step-card-title {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--navy-950);
+  line-height: 1.3;
+  margin-bottom: 0.75rem;
+}
+
+.step-card-desc {
+  font-size: 0.925rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+/* 5. Instruments Portfolio */
+.instruments-section {
+  background-color: var(--gray-50);
+  border-bottom: 1px solid var(--border);
+}
+
+.instruments-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.instrument-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 2.25rem 2rem;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--transition-base), border-color var(--transition-base);
+}
+
+.instrument-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--navy-300);
+}
+
+.inst-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+}
+
+.inst-icon-box {
+  width: 48px;
+  height: 48px;
+  background: var(--navy-50);
+  border: 1px solid var(--navy-100);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.inst-icon {
+  color: var(--navy-800);
+}
+
+.inst-card-num {
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--navy-600);
+}
+
+.inst-card-title {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--navy-950);
+  line-height: 1.3;
+  margin-bottom: 0.75rem;
+}
+
+.inst-card-desc {
+  font-size: 0.925rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+/* 6. CTA Strip */
+.domestic-cta-strip {
+  background-color: var(--navy-950);
+  padding: 3.5rem 0;
+  color: var(--white);
+}
+
+.domestic-cta-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2.5rem;
+}
+
+.domestic-cta-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 2.5vw, 2.1rem);
+  font-weight: 700;
+  line-height: 1.25;
+  color: #ffffff !important;
+  margin-bottom: 0.5rem;
+}
+
+.domestic-cta-subtitle {
+  font-size: 1.05rem;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0;
+  max-width: 720px;
+}
+
+/* ============================================================
+   RESPONSIVE
+============================================================ */
+
+@media (max-width: 1024px) {
+  .domestic-intro-grid,
+  .inland-lc-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .process-steps-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .instruments-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .domestic-cta-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 768px) {
+  .process-steps-grid,
+  .instruments-cards-grid {
+    grid-template-columns: 1fr;
+  }
+}

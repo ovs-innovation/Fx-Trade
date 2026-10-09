@@ -1,0 +1,86 @@
+/* ===================================================
+   PAGE BANNER — INNER PAGES CORPORATE HERO
+   =================================================== */
+
+.page-banner-section {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding-top: clamp(4.5rem, 7vw, 6.5rem);
+  padding-bottom: clamp(4.5rem, 7vw, 6.5rem);
+  color: #ffffff;
+  overflow: hidden;
+}
+
+.page-banner-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(6, 26, 42, 0.88) 0%,
+    rgba(8, 38, 58, 0.82) 50%,
+    rgba(6, 26, 42, 0.88) 100%
+  );
+  z-index: 1;
+}
+
+.page-banner-content {
+  position: relative;
+  z-index: 2;
+  max-width: 820px;
+}
+
+.page-banner-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.88rem;
+  color: rgba(255, 255, 255, 0.75);
+  margin-bottom: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.breadcrumb-link {
+  color: rgba(255, 255, 255, 0.75);
+  transition: color 150ms ease;
+}
+
+.breadcrumb-link:hover {
+  color: #ffffff;
+}
+
+.breadcrumb-sep {
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.breadcrumb-current {
+  color: #a3e635;
+  font-weight: 600;
+}
+
+.page-banner-title {
+  font-size: clamp(2.2rem, 4vw, 3.4rem);
+  font-weight: 700;
+  line-height: 1.15;
+  color: #ffffff !important;
+  letter-spacing: -0.025em;
+  margin-bottom: 0.75rem;
+}
+
+.page-banner-subtitle {
+  font-size: 1.08rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.88);
+  max-width: 680px;
+}
+
+@media (max-width: 768px) {
+  .page-banner-section {
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+  }
+}

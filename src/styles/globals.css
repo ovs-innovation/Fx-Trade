@@ -1,0 +1,338 @@
+@import "./variables.css";
+
+/* Reset & Base Styles */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--canvas-bg);
+  color: var(--text-primary);
+  line-height: 1.65;
+  overflow-x: hidden;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+input,
+textarea,
+select {
+  font-family: inherit;
+  font-size: 0.95rem;
+}
+
+/* Typography Hierarchy - Corporate & Legible */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--navy-900);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+h1 {
+  font-size: clamp(2.3rem, 3.8vw, 3.4rem);
+  line-height: 1.15;
+}
+
+h2 {
+  font-size: clamp(1.85rem, 2.8vw, 2.5rem);
+  line-height: 1.2;
+}
+
+h3 {
+  font-size: clamp(1.3rem, 1.8vw, 1.65rem);
+  line-height: 1.3;
+}
+
+h4 {
+  font-size: 1.15rem;
+  line-height: 1.4;
+}
+
+p {
+  color: var(--text-secondary);
+  font-size: 1.025rem;
+  line-height: 1.7;
+}
+
+.text-lead {
+  font-size: 1.15rem;
+  line-height: 1.65;
+  color: var(--text-secondary);
+  max-width: 760px;
+}
+
+/* Section Tag / Eyebrow */
+.section-tag {
+  display: inline-block;
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--brand-green);
+  margin-bottom: 0.6rem;
+}
+
+/* Layout Containers */
+.container-custom {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--container-pad);
+  padding-right: var(--container-pad);
+}
+
+.section-padding {
+  padding-top: var(--section-pad);
+  padding-bottom: var(--section-pad);
+}
+
+.section-padding-sm {
+  padding-top: clamp(2.5rem, 4vw, 3.5rem);
+  padding-bottom: clamp(2.5rem, 4vw, 3.5rem);
+}
+
+/* Buttons - Clean Corporate Micro-Interactions (Radius 6-8px) */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  padding: 0.75rem 1.6rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: var(--radius-md);
+  transition: all 220ms cubic-bezier(0.16, 1, 0.3, 1);
+  white-space: nowrap;
+  cursor: pointer;
+  position: relative;
+}
+
+.btn svg {
+  transition: transform 220ms ease;
+}
+
+.btn-accent,
+.btn-primary {
+  background-color: var(--brand-green);
+  color: #ffffff;
+  border: 1px solid var(--brand-green);
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.05);
+}
+
+.btn-accent:hover,
+.btn-primary:hover {
+  background-color: var(--brand-green-hover);
+  border-color: var(--brand-green-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(95, 165, 45, 0.28);
+}
+
+.btn-accent:hover svg,
+.btn-primary:hover svg {
+  transform: translateX(3px);
+}
+
+.btn-navy {
+  background-color: var(--navy-900);
+  color: #ffffff;
+  border: 1px solid var(--navy-900);
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.05);
+}
+
+.btn-navy:hover {
+  background-color: var(--navy-950);
+  border-color: var(--navy-950);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(8, 38, 58, 0.25);
+}
+
+.btn-navy:hover svg {
+  transform: translateX(3px);
+}
+
+.btn-outline {
+  background-color: #ffffff;
+  color: var(--navy-900);
+  border: 1px solid var(--border-subtle);
+  transition: all 220ms ease;
+}
+
+.btn-outline:hover {
+  border-color: var(--brand-green);
+  background-color: var(--brand-green-light);
+  color: var(--navy-950);
+  transform: translateY(-1px);
+}
+
+.btn-outline:hover svg {
+  transform: translateX(3px);
+}
+
+.btn-outline-white {
+  background-color: transparent;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+}
+
+.btn-outline-white:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  border-color: #ffffff;
+  transform: translateY(-1px);
+}
+
+.btn-sm {
+  padding: 0.55rem 1.15rem;
+  font-size: 0.88rem;
+}
+
+.btn-lg {
+  padding: 0.88rem 1.9rem;
+  font-size: 1rem;
+}
+
+/* Micro-interaction Utilities */
+.img-zoom-wrap {
+  overflow: hidden;
+  border-radius: var(--radius-xl);
+}
+
+.img-zoom-wrap img {
+  transition: transform 450ms cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+
+.img-zoom-wrap:hover img {
+  transform: scale(1.03);
+}
+
+.link-arrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-weight: 600;
+  color: var(--brand-green);
+  transition: color 200ms ease;
+}
+
+.link-arrow svg {
+  transition: transform 220ms ease;
+}
+
+.link-arrow:hover {
+  color: var(--brand-green-hover);
+}
+
+.link-arrow:hover svg {
+  transform: translateX(5px);
+}
+
+/* Section Eyebrow with subtle green accent dash */
+.section-eyebrow-accent {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--brand-green);
+  margin-bottom: 0.6rem;
+}
+
+.section-eyebrow-accent::before {
+  content: "";
+  display: inline-block;
+  width: 16px;
+  height: 2px;
+  background-color: var(--brand-green);
+  border-radius: 2px;
+}
+
+/* Form Controls */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  margin-bottom: 1.25rem;
+}
+
+.form-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--navy-900);
+}
+
+.form-input,
+.form-textarea,
+.form-select {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background-color: #ffffff;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  font-size: 0.95rem;
+  transition: border-color 150ms ease;
+}
+
+.form-input:focus,
+.form-textarea:focus,
+.form-select:focus {
+  outline: none;
+  border-color: var(--brand-green);
+  box-shadow: 0 0 0 3px rgba(95, 165, 45, 0.15);
+}
+
+/* Accessible focus visible */
+:focus-visible {
+  outline: 2px solid var(--brand-green);
+  outline-offset: 2px;
+}
+
+/* Screen reader only utility */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
