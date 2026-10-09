@@ -712,10 +712,7 @@
 .about-philosophy-section::before {
   content: "";
   position: absolute;
-  top: 0;
-  right: 0;
-  width: 50%;
-  height: 100%;
+  inset: 0;
   background: radial-gradient(circle at 80% 30%, rgba(92, 166, 49, 0.12), transparent 70%);
   pointer-events: none;
 }
@@ -1721,6 +1718,72 @@
   }
   .leader-modal-photo {
     height: 220px;
+  }
+
+  /* Section 03 - Philosophy Mobile Optimization */
+  .about-philosophy-section {
+    padding-top: 3.25rem;
+    padding-bottom: 3.5rem;
+  }
+
+  .about-philosophy-section::before {
+    background: radial-gradient(circle at 50% 15%, rgba(92, 166, 49, 0.15), transparent 70%);
+  }
+
+  .philosophy-header {
+    margin-bottom: 1.75rem;
+  }
+
+  .philosophy-main-heading {
+    font-size: clamp(1.45rem, 5.8vw, 1.85rem);
+    line-height: 1.25;
+    letter-spacing: -0.015em;
+  }
+
+  .philosophy-columns-grid {
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .philosophy-col {
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-left: 3.5px solid #78c257;
+    border-radius: 14px;
+    padding: 1.35rem 1.15rem;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.2);
+  }
+
+  .philosophy-icon-circle {
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+    background: rgba(120, 194, 87, 0.18);
+    border: 1px solid rgba(120, 194, 87, 0.4);
+    color: #78c257;
+    margin-bottom: 0.85rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  .philosophy-col-title {
+    font-size: 1.14rem;
+    font-weight: 700;
+    line-height: 1.32;
+    margin-bottom: 0.45rem;
+    color: #ffffff;
+  }
+
+  .philosophy-col-title br {
+    display: none;
+  }
+
+  .philosophy-col-desc {
+    font-size: 0.88rem;
+    line-height: 1.58;
+    color: #cbd5e1;
+    margin: 0;
   }
 }
 
