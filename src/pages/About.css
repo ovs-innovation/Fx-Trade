@@ -67,7 +67,9 @@
 .about-hero-ref-main {
   position: relative;
   z-index: 1;
+  width: 100%;
   max-width: 1620px;
+  box-sizing: border-box;
   margin: 0 auto;
   padding: 1.85rem clamp(1.5rem, 3.5vw, 3.5rem) 1.85rem;
   display: grid;
@@ -84,12 +86,21 @@
   justify-content: space-between;
   z-index: 2;
   height: 100%;
+  min-width: 0;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .about-hero-ref-left-body {
   display: flex;
   flex-direction: column;
+  min-width: 0;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
+
 
 .about-hero-ref-eyebrow {
   display: inline-flex;
@@ -137,9 +148,13 @@
   line-height: 1.58;
   color: #52667A;
   max-width: 520px;
+  width: 100%;
   margin-bottom: 0.95rem;
   font-weight: 400;
   font-family: var(--font-sans);
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  box-sizing: border-box;
 }
 
 .about-hero-ref-p2 {
@@ -147,10 +162,15 @@
   line-height: 1.58;
   color: #52667A;
   max-width: 520px;
+  width: 100%;
   margin-bottom: 0;
   font-weight: 400;
   font-family: var(--font-sans);
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  box-sizing: border-box;
 }
+
 
 .about-hero-ref-cta-wrap {
   display: flex;
@@ -1400,16 +1420,34 @@
 
 @media (max-width: 1024px) {
   .about-hero-ref-main {
-    grid-template-columns: 1fr;
-    gap: 3rem;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2.5rem;
     min-height: auto;
     padding-top: 2rem;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+  .about-hero-ref-left,
+  .about-hero-ref-right {
+    min-width: 0;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+  .about-hero-ref-p1,
+  .about-hero-ref-p2 {
+    max-width: 100%;
+    width: 100%;
   }
   .about-hero-ref-title {
-    font-size: 2.6rem;
+    font-size: clamp(2rem, 4.5vw, 2.5rem);
+    max-width: 100%;
   }
   .about-hero-ref-img-frame {
-    height: 420px;
+    height: 400px;
+    width: 100%;
+    max-width: 100%;
   }
   .about-hero-ref-exp-card {
     left: 20px;
@@ -1458,60 +1496,303 @@
 
 @media (max-width: 768px) {
   .about-hero-ref-main {
-    padding: 1.5rem 1rem 2rem;
-    gap: 2.5rem;
+    padding: 1.5rem 16px 2rem 16px;
+    gap: 2rem;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+  .about-hero-ref-left {
+    min-width: 0;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+  .about-hero-ref-left-body {
+    min-width: 0;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
   }
   .about-hero-ref-title {
-    font-size: 2.2rem;
+    font-size: clamp(1.75rem, 6.2vw, 2.15rem);
+    line-height: 1.15;
+    margin-bottom: 1rem;
+    max-width: 100%;
+    overflow-wrap: break-word;
+  }
+  .about-hero-ref-title span {
+    display: block;
+    max-width: 100%;
+    overflow-wrap: break-word;
   }
   .about-hero-ref-p1,
   .about-hero-ref-p2 {
-    font-size: 0.98rem;
+    font-size: 0.95rem;
+    line-height: 1.58;
+    max-width: 100%;
+    width: 100%;
+    box-sizing: border-box;
   }
-  .about-hero-ref-img-frame {
-    height: auto;
-    aspect-ratio: 4 / 3;
+  .about-hero-ref-cta-wrap {
+    width: 100%;
+    margin-top: 1.25rem;
+    padding-top: 0;
   }
-  .about-hero-ref-exp-card {
-    position: relative;
-    left: 0;
-    bottom: 0;
-    margin-top: 1rem;
+  .about-hero-ref-btn {
+    width: 100%;
+    height: 48px;
+    box-sizing: border-box;
+  }
+  .about-hero-ref-right {
+    min-width: 0;
     width: 100%;
     max-width: 100%;
+    box-sizing: border-box;
+  }
+  .about-hero-ref-img-frame {
+    height: 290px;
+    width: 100%;
+    max-width: 100%;
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+  .about-hero-ref-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+  }
+  /* Sleek floating micro-card in bottom-left corner */
+  .about-hero-ref-exp-card {
+    position: absolute;
+    left: 12px;
+    bottom: 12px;
+    right: auto;
+    width: auto;
+    max-width: 215px;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0.5rem 0.8rem;
+    background: rgba(255, 255, 255, 0.93);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    box-shadow: 0 4px 16px rgba(6, 40, 61, 0.15);
+    border-radius: 8px;
+    border: 1px solid rgba(225, 232, 238, 0.9);
+    min-height: auto;
+  }
+  .exp-card-accent-bar {
+    width: 3px;
+    margin-right: 0.65rem;
+  }
+  .exp-card-number {
+    font-size: 1.45rem;
+    margin-bottom: 2px;
+  }
+  .exp-card-label {
+    font-size: 0.58rem;
+    letter-spacing: 0.05em;
   }
   .about-hero-ref-tag-detail {
-    right: 16px;
-    bottom: 16px;
+    display: none;
   }
+
+  /* Compact 2x2 Stats Dashboard Grid */
   .about-ref-stats-container {
-    grid-template-columns: 1fr;
-    gap: 1.75rem;
-    padding: 2rem 1rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.35rem 0.85rem;
+    padding: 1.5rem 1rem;
+    height: auto;
+  }
+  .about-ref-stat-divider {
+    display: none;
   }
   .about-ref-stat-col {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0;
     justify-content: flex-start;
+  }
+  .stat-ref-icon-circle {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+  }
+  .stat-ref-number {
+    font-size: 1.55rem;
+    line-height: 1.1;
+  }
+  .stat-ref-number.stat-ref-text-val {
+    font-size: 1.05rem;
+  }
+  .stat-ref-label {
+    font-size: 0.74rem;
+    line-height: 1.25;
+    margin-top: 2px;
+  }
+
+  /* Layered Editorial Collage for Who We Are */
+  .whoweare-visual-col {
+    position: relative;
+    padding-right: 0;
+    padding-bottom: 28px;
+    margin-bottom: 1.5rem;
+  }
+  .whoweare-main-photo-frame {
+    width: 86%;
+    height: 215px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(6, 40, 61, 0.1);
+  }
+  .whoweare-main-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .whoweare-overlap-photo-frame {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 56%;
+    height: 135px;
+    border-radius: 10px;
+    border: 3px solid #ffffff;
+    box-shadow: 0 12px 28px rgba(6, 40, 61, 0.18);
+    overflow: hidden;
+    z-index: 2;
+    margin-top: 0;
+  }
+  .whoweare-overlap-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .whoweare-photo-pill {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    bottom: auto;
+    z-index: 3;
+    padding: 0.35rem 0.65rem;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(8px);
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(6, 40, 61, 0.1);
+    border: 1px solid var(--border-light);
+    gap: 0.35rem;
+  }
+  .whoweare-photo-pill span {
+    font-size: 0.62rem;
+    letter-spacing: 0.05em;
+  }
+  .whoweare-photo-pill .pill-dot {
+    font-size: 0.55rem;
+  }
+
+  .approach-right-col {
+    padding-left: 0;
+  }
+  .steps-vertical-track {
+    display: none;
+  }
+  .step-item-card {
+    padding: 1rem;
+    gap: 1rem;
   }
   .journey-milestones-grid {
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 1.75rem;
   }
   .leadership-ref-cards-row {
     grid-template-columns: 1fr;
   }
   .leader-ref-photo-wrap {
-    height: 340px;
+    height: 320px;
   }
   .leader-modal-inner {
     grid-template-columns: 1fr;
   }
   .leader-modal-photo {
-    height: 240px;
+    height: 220px;
+  }
+}
+
+@media (max-width: 640px) {
+  .cta-buttons-group {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.75rem;
+  }
+  .cta-primary-btn,
+  .cta-secondary-btn {
+    width: 100%;
+    justify-content: center;
+  }
+  .network-map-container {
+    padding: 0.75rem;
+    max-width: 100%;
+  }
+  .about-final-cta-section {
+    min-height: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-hero-ref-main {
+    padding: 1.25rem 14px 1.75rem 14px;
+    gap: 1.75rem;
+  }
+  .about-hero-ref-title {
+    font-size: clamp(1.65rem, 6.8vw, 1.95rem);
+  }
+  .about-hero-ref-p1,
+  .about-hero-ref-p2 {
+    font-size: 0.92rem;
+    line-height: 1.55;
+  }
+  .about-hero-ref-img-frame {
+    height: 260px;
+  }
+  .about-hero-ref-exp-card {
+    left: 10px;
+    bottom: 10px;
+    max-width: 195px;
+    padding: 0.4rem 0.65rem;
+  }
+  .exp-card-number {
+    font-size: 1.35rem;
+  }
+  .exp-card-label {
+    font-size: 0.54rem;
+  }
+  .about-ref-stats-container {
+    padding: 1.35rem 0.5rem;
+    gap: 1.15rem 0.65rem;
+  }
+  .stat-ref-number {
+    font-size: 1.4rem;
+  }
+  .stat-ref-icon-circle {
+    width: 36px;
+    height: 36px;
+  }
+  .whoweare-main-photo-frame {
+    height: 190px;
   }
   .whoweare-overlap-photo-frame {
-    position: relative;
-    width: 100%;
-    margin-top: 1rem;
-    border: none;
+    height: 120px;
+  }
+  .leader-ref-photo-wrap {
+    height: 260px;
+  }
+  .leader-modal-body {
+    padding: 1.25rem 1rem;
   }
 }

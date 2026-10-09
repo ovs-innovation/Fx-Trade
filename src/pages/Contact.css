@@ -1117,7 +1117,7 @@
     padding: 3rem 0;
   }
   .contact-hero-title {
-    font-size: 2.1rem;
+    font-size: clamp(2rem, 5.5vw, 2.4rem);
   }
   .contact-hero-desktop-br {
     display: inline;
@@ -1127,12 +1127,37 @@
     align-items: flex-start;
     gap: 1rem;
   }
+  .contact-hero-item-text {
+    white-space: normal;
+    word-break: break-word;
+  }
+  .contact-support-section {
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+  }
+  .support-main-heading {
+    font-size: clamp(2rem, 5.5vw, 2.5rem);
+  }
+  .contact-form-card {
+    padding: 1.5rem 1.25rem;
+    border-radius: 12px;
+  }
   .form-fields-grid-2 {
     grid-template-columns: 1fr;
     gap: 0;
   }
   .submit-form-btn {
     width: 100%;
+  }
+  .contact-office-section {
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+  }
+  .office-building-photo-frame {
+    height: 180px;
+  }
+  .office-map-iframe {
+    height: 220px;
   }
   .contact-faq-section {
     padding: 3.25rem 0;
@@ -1155,3 +1180,37 @@
     margin: -30px 0.75rem 0.75rem 0.75rem;
   }
 }
+
+@media (max-width: 480px) {
+  .contact-hero-title {
+    font-size: clamp(1.8rem, 7vw, 2.15rem);
+  }
+
+  .contact-form-card {
+    padding: 1.25rem 1rem;
+  }
+
+  .office-info-card {
+    padding: 1.15rem 0.95rem;
+    gap: 0.85rem;
+  }
+
+  .office-card-phone-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
+
+  .phone-sep {
+    display: none;
+  }
+
+  .faq-question-btn {
+    padding: 0.95rem 1rem;
+  }
+
+  .faq-answer-inner {
+    padding: 0 1rem 1.15rem 1rem;
+  }
+}
+

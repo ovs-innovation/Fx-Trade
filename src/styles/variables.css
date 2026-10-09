@@ -60,3 +60,10 @@
   --transition-img: transform 450ms cubic-bezier(0.16, 1, 0.3, 1);
   --brand-green-glow: rgba(95, 165, 45, 0.22);
 }
+
+@media (max-width: 640px) {
+  :root {
+    --container-pad: 16px;
+    --section-pad: clamp(3rem, 5vw, 4rem);
+  }
+}

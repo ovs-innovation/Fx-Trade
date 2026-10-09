@@ -221,5 +221,27 @@
 @media (max-width: 768px) {
   .ds-facilities-grid {
     grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .ds-cta-content .btn {
+    width: 100%;
+    justify-content: center;
   }
 }
+
+@media (max-width: 640px) {
+  .ds-facility-card {
+    padding: 1.5rem 1.25rem;
+  }
+
+  .ds-why-box {
+    padding: 1.5rem 1.25rem;
+  }
+
+  .ds-intro-grid,
+  .ds-how-grid {
+    gap: 2.25rem;
+  }
+}
+

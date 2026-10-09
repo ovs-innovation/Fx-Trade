@@ -318,6 +318,21 @@
   }
 
   .itf-hero-card {
-    padding: 1.5rem;
+    padding: 1.25rem;
+  }
+
+  .itf-hero-image-wrap {
+    height: 220px;
+    min-height: 220px;
+  }
+
+  .itf-cta-content {
+    padding: 2rem 1.25rem;
+  }
+
+  .itf-cta-content .btn {
+    width: 100%;
+    justify-content: center;
   }
 }
+

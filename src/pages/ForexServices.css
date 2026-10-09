@@ -308,5 +308,25 @@
   .forex-core-grid,
   .risk-steps-grid {
     grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .forex-cta-content .btn {
+    width: 100%;
+    justify-content: center;
   }
 }
+
+@media (max-width: 640px) {
+  .forex-core-card,
+  .risk-step-card,
+  .review-list-item {
+    padding: 1.5rem 1.25rem;
+  }
+
+  .forex-intro-grid,
+  .risk-top-grid {
+    gap: 2.25rem;
+  }
+}
+

@@ -165,3 +165,16 @@
 .drawer-actions .w-full {
   width: 100%;
 }
+
+@media (max-width: 360px) {
+  .mobile-drawer-top,
+  .mobile-drawer-body {
+    padding: 1rem;
+  }
+
+  .drawer-link,
+  .drawer-group-header {
+    padding: 0.75rem 0.85rem;
+  }
+}
+

@@ -9,14 +9,35 @@ export default function Header() {
   const [servicesOpen, setServicesOpen] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
   const location = useLocation();
   const dropdownRef = useRef(null);
+  const lastScrollY = useRef(0);
 
-  // Track scroll position for subtle sticky shadow
+  // Smart sticky header: hides smoothly on scroll down, comes back immediately on scroll up
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 15);
+      const currentScrollY = window.scrollY;
+
+      // Blur & elevation state when scrolled
+      setIsScrolled(currentScrollY > 15);
+
+      // Smart scroll reveal logic
+      if (currentScrollY <= 60) {
+        // At the top of page: always visible
+        setIsVisible(true);
+      } else if (currentScrollY > lastScrollY.current + 8) {
+        // Scrolling DOWN: slide up out of view
+        setIsVisible(false);
+        setServicesOpen(false);
+      } else if (currentScrollY < lastScrollY.current - 8) {
+        // Scrolling UP: glide back down into view ("come back")
+        setIsVisible(true);
+      }
+
+      lastScrollY.current = currentScrollY;
     };
+
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -40,7 +61,11 @@ export default function Header() {
 
   return (
     <>
-      <header className={`site-header ${isScrolled ? "is-scrolled" : ""}`}>
+      <header
+        className={`site-header ${isScrolled ? "is-scrolled" : ""} ${
+          !isVisible && !mobileMenuOpen ? "is-hidden" : ""
+        }`}
+      >
         <div className="container-custom header-inner">
           {/* Logo Left */}
           <Link to="/" className="brand-logo" aria-label="FxTrade Consulting Pvt. Ltd. Home">

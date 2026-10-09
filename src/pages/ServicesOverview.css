@@ -10,10 +10,11 @@
 
 .services-directory-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
   gap: 2rem;
   margin-top: 3rem;
 }
+
 
 .directory-card {
   background: #ffffff;
@@ -170,5 +171,21 @@
 @media (max-width: 640px) {
   .services-directory-grid {
     grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .services-cta-strip {
+    padding: 3rem 0;
+  }
+
+  .services-cta-content {
+    padding: 2rem 1.25rem;
+    gap: 1.75rem;
+  }
+
+  .services-cta-content .btn {
+    width: 100%;
+    justify-content: center;
   }
 }
+
