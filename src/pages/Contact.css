@@ -129,12 +129,12 @@
   font-size: 0.88rem;
   font-weight: 600;
   letter-spacing: 0.01em;
-  transition: opacity 160ms ease, transform 160ms ease;
+  transition: opacity 220ms ease, transform 240ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .contact-hero-item:hover {
   color: #ffffff;
-  opacity: 0.92;
+  opacity: 1;
   transform: translateY(-1px);
 }
 
@@ -158,12 +158,15 @@
   justify-content: center;
   flex-shrink: 0;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.22);
-  transition: transform 160ms ease, box-shadow 160ms ease;
+  transition: transform 240ms cubic-bezier(0.22, 1, 0.36, 1),
+              background-color 200ms ease,
+              box-shadow 240ms ease;
 }
 
 .contact-hero-item:hover .contact-hero-icon-circle {
-  transform: scale(1.06);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transform: scale(1.04);
+  background-color: #f0fdf4;
+  box-shadow: 0 4px 12px rgba(92, 166, 49, 0.3);
 }
 
 .contact-hero-item-text {
@@ -580,13 +583,15 @@
   border-radius: 12px;
   padding: 1.4rem 1.6rem;
   box-shadow: 0 2px 8px rgba(15, 23, 42, 0.03);
-  transition: all 200ms ease;
+  transition: transform 300ms cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 300ms cubic-bezier(0.22, 1, 0.36, 1),
+              border-color 260ms ease;
 }
 
 .office-info-card:hover {
-  transform: translateY(-2px);
+  transform: translateY(-3px);
   border-color: rgba(92, 166, 49, 0.4);
-  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.06);
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
 }
 
 .office-card-icon-box {
@@ -599,6 +604,12 @@
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  transition: background-color 220ms ease, transform 240ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.office-info-card:hover .office-card-icon-box {
+  background-color: rgba(92, 166, 49, 0.22);
+  transform: scale(1.04);
 }
 
 .office-card-details {
@@ -633,8 +644,16 @@
   transition: color 180ms ease;
 }
 
+.office-card-link svg {
+  transition: transform 220ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
 .office-card-link:hover {
   color: var(--brand-green);
+}
+
+.office-card-link:hover svg {
+  transform: translateX(4px);
 }
 
 .office-card-phone-row {
@@ -690,6 +709,12 @@
   object-fit: cover;
   object-position: center;
   filter: brightness(0.96);
+  transition: transform 550ms cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
+}
+
+.office-map-visual-wrap:hover .office-building-photo {
+  transform: scale(1.02);
 }
 
 .office-map-embed-card {
@@ -848,7 +873,7 @@
 
 .faq-accordion-row {
   border-bottom: 1px solid #edf2f7;
-  transition: background-color 180ms ease;
+  transition: background-color 200ms ease;
 }
 
 .faq-accordion-row:last-child {
@@ -860,17 +885,17 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1.1rem 1.6rem;
+  padding: 1.15rem 1.6rem;
   background: transparent;
   border: none;
   cursor: pointer;
   text-align: left;
   gap: 1.25rem;
-  transition: all 180ms ease;
+  transition: background-color 200ms ease;
 }
 
 .faq-question-btn:hover {
-  background-color: #fbfcfd;
+  background-color: rgba(248, 250, 252, 0.9);
 }
 
 .faq-question-btn:hover .faq-question-text {
@@ -882,7 +907,7 @@
   font-weight: 700;
   color: #071f34;
   line-height: 1.35;
-  transition: color 180ms ease;
+  transition: color 200ms ease;
 }
 
 .faq-accordion-row.is-expanded .faq-question-text {
@@ -896,21 +921,37 @@
   color: #071f34;
   font-size: 1.1rem;
   flex-shrink: 0;
-  transition: color 180ms ease, transform 180ms ease;
+  transition: color 200ms ease, transform 300ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .faq-question-btn:hover .faq-toggle-icon {
   color: #5ca631;
 }
 
+.faq-accordion-row.is-expanded .faq-toggle-icon {
+  transform: rotate(90deg);
+  color: #5ca631;
+}
+
 .faq-answer-collapse {
-  max-height: 0;
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 300ms cubic-bezier(0.22, 1, 0.36, 1);
   overflow: hidden;
-  transition: max-height 260ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .faq-answer-collapse.is-open {
-  max-height: 250px;
+  grid-template-rows: 1fr;
+}
+
+.faq-answer-collapse > .faq-answer-inner {
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity 280ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.faq-answer-collapse.is-open > .faq-answer-inner {
+  opacity: 1;
 }
 
 .faq-answer-inner {

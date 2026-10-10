@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { ChevronDown, Menu } from "lucide-react";
+import { ChevronDown, Menu, ArrowRight } from "lucide-react";
 import MobileMenu from "./MobileMenu";
 import fxtradeLogo from "../../assets/logo/fxtrade-consulting-logo-trans.png";
 import "./Header.css";
@@ -124,39 +124,54 @@ export default function Header() {
                   <div className="services-dropdown-panel" role="menu">
                     <Link
                       to="/services"
-                      className="dropdown-link overview-link"
+                      className={`dropdown-link overview-link ${
+                        location.pathname === "/services" ? "is-current" : ""
+                      }`}
                       onClick={() => setServicesOpen(false)}
                     >
-                      <strong>All Services Overview</strong>
+                      <span>All Services Overview</span>
+                      <ArrowRight size={14} className="dropdown-item-arrow" />
                     </Link>
                     <div className="dropdown-divider"></div>
                     <Link
                       to="/services/domestic-trade-finance"
-                      className="dropdown-link"
+                      className={`dropdown-link ${
+                        location.pathname === "/services/domestic-trade-finance" ? "is-current" : ""
+                      }`}
                       onClick={() => setServicesOpen(false)}
                     >
-                      Domestic Trade Finance
+                      <span>Domestic Trade Finance</span>
+                      <ArrowRight size={14} className="dropdown-item-arrow" />
                     </Link>
                     <Link
                       to="/services/international-trade-finance"
-                      className="dropdown-link"
+                      className={`dropdown-link ${
+                        location.pathname === "/services/international-trade-finance" ? "is-current" : ""
+                      }`}
                       onClick={() => setServicesOpen(false)}
                     >
-                      International Trade Finance
+                      <span>International Trade Finance</span>
+                      <ArrowRight size={14} className="dropdown-item-arrow" />
                     </Link>
                     <Link
                       to="/services/forex-services"
-                      className="dropdown-link"
+                      className={`dropdown-link ${
+                        location.pathname === "/services/forex-services" ? "is-current" : ""
+                      }`}
                       onClick={() => setServicesOpen(false)}
                     >
-                      Forex & Treasury Consulting
+                      <span>Forex & Treasury Consulting</span>
+                      <ArrowRight size={14} className="dropdown-item-arrow" />
                     </Link>
                     <Link
                       to="/services/debt-syndication"
-                      className="dropdown-link"
+                      className={`dropdown-link ${
+                        location.pathname === "/services/debt-syndication" ? "is-current" : ""
+                      }`}
                       onClick={() => setServicesOpen(false)}
                     >
-                      Debt Syndication
+                      <span>Debt Syndication</span>
+                      <ArrowRight size={14} className="dropdown-item-arrow" />
                     </Link>
                   </div>
                 )}

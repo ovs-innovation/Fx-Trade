@@ -647,11 +647,12 @@
   background-color: var(--brand-green);
   border: 3px solid #ffffff;
   box-shadow: 0 0 0 2px var(--brand-green);
-  transition: transform 180ms ease;
+  transition: transform 240ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 240ms ease;
 }
 
 .timeline-node-card:hover .timeline-node-dot {
-  transform: scale(1.3);
+  transform: scale(1.15);
+  box-shadow: 0 0 0 3px rgba(95, 165, 45, 0.35);
 }
 
 .timeline-year {
@@ -684,11 +685,12 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 300ms ease;
+  transition: transform 550ms cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
 }
 
 .timeline-node-card:hover .timeline-thumb-img {
-  transform: scale(1.05);
+  transform: scale(1.02);
 }
 
 .timeline-desc {
@@ -740,6 +742,7 @@
   flex: 1;
   display: flex;
   flex-direction: column;
+  transition: transform 240ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .philosophy-divider {
@@ -759,6 +762,12 @@
   justify-content: center;
   color: #78c257;
   margin-bottom: 1.35rem;
+  transition: transform 240ms cubic-bezier(0.22, 1, 0.36, 1), filter 240ms ease;
+}
+
+.philosophy-col:hover .philosophy-icon-circle {
+  filter: brightness(1.2);
+  transform: scale(1.04);
 }
 
 .philosophy-col-title {
@@ -768,6 +777,11 @@
   line-height: 1.25;
   margin-bottom: 0.85rem;
   letter-spacing: -0.01em;
+  transition: transform 240ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.philosophy-col:hover .philosophy-col-title {
+  transform: translateY(-2px);
 }
 
 .philosophy-col-desc {
@@ -887,12 +901,14 @@
   border-radius: 10px;
   border: 1px solid var(--border-light);
   box-shadow: 0 4px 14px rgba(15, 23, 42, 0.04);
-  transition: all 200ms ease;
+  transition: transform 300ms cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 300ms cubic-bezier(0.22, 1, 0.36, 1),
+              border-color 260ms ease;
 }
 
 .step-item-card:hover {
-  transform: translateX(4px);
-  border-color: #cbd5e1;
+  transform: translateX(3px);
+  border-color: rgba(95, 165, 45, 0.45);
   box-shadow: 0 8px 22px rgba(15, 23, 42, 0.08);
 }
 
@@ -909,6 +925,11 @@
   justify-content: center;
   flex-shrink: 0;
   box-shadow: 0 4px 10px rgba(92, 166, 49, 0.3);
+  transition: transform 240ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.step-item-card:hover .step-num-badge {
+  transform: scale(1.05);
 }
 
 .step-content {
@@ -1115,7 +1136,8 @@
   box-shadow: 0 10px 28px rgba(6, 40, 61, 0.1);
   border: 1px solid var(--border-light);
   background: #ffffff;
-  transition: transform 260ms ease, box-shadow 260ms ease;
+  transition: transform 350ms cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 350ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .leader-ref-card:hover {
@@ -1135,11 +1157,12 @@
   height: 100%;
   object-fit: cover;
   object-position: top center;
-  transition: transform 400ms ease;
+  transition: transform 550ms cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
 }
 
 .leader-ref-card:hover .leader-ref-photo {
-  transform: scale(1.04);
+  transform: scale(1.015);
 }
 
 .leader-ref-overlay-badge {
@@ -1156,6 +1179,11 @@
   align-items: center;
   justify-content: space-between;
   color: #ffffff;
+  transition: transform 260ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.leader-ref-card:hover .leader-ref-overlay-badge {
+  transform: translateY(-3px);
 }
 
 .leader-badge-text {

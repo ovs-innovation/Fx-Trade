@@ -62,6 +62,38 @@
   font-weight: 600;
 }
 
+.page-banner-header-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.65rem;
+}
+
+.page-banner-category-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.page-banner-category {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--brand-green);
+}
+
+.page-banner-index-pill {
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: #ffffff;
+  background-color: rgba(95, 165, 45, 0.25);
+  border: 1px solid rgba(95, 165, 45, 0.5);
+  padding: 2px 7px;
+  border-radius: var(--radius-xs);
+  letter-spacing: 0.05em;
+}
+
 .page-banner-title {
   font-size: clamp(2rem, 4vw, 3.4rem);
   font-weight: 700;
@@ -76,7 +108,38 @@
   font-size: clamp(0.98rem, 1.25vw, 1.08rem);
   line-height: 1.6;
   color: rgba(255, 255, 255, 0.88);
-  max-width: 680px;
+  max-width: 720px;
+}
+
+.page-banner-metrics-strip {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 1.75rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  flex-wrap: wrap;
+}
+
+.banner-metric-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.banner-metric-val {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+}
+
+.banner-metric-lbl {
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: rgba(255, 255, 255, 0.7);
 }
 
 @media (max-width: 768px) {

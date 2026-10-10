@@ -1,55 +1,244 @@
-@keyframes flowDash {
-  to {
-    stroke-dashoffset: -40;
-  }
-}
+/* ===================================================
+   FXTRADE PREMIUM MOTION & INTERACTION SYSTEM
+   Subtle, Institutional, Easing: cubic-bezier(0.22, 1, 0.36, 1)
+   =================================================== */
 
-@keyframes pulseSubtle {
-  0%, 100% {
-    opacity: 0.35;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 0.9;
-    transform: scale(1.08);
-  }
-}
-
-@keyframes floatGentle {
-  0%, 100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-6px);
-  }
-}
-
-@keyframes shimmer {
+/* Global Page Entry — Instant feel (400ms), 8px subtle rise */
+@keyframes pageEnterFade {
   0% {
-    background-position: -200% 0;
+    opacity: 0;
+    transform: translateY(8px);
   }
   100% {
-    background-position: 200% 0;
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-.anim-flow-line {
-  stroke-dasharray: 6 6;
-  animation: flowDash 3.5s linear infinite;
+.page-enter {
+  animation: pageEnterFade 400ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  will-change: opacity, transform;
 }
 
-.anim-pulse-subtle {
-  animation: pulseSubtle 3s ease-in-out infinite;
+/* ===================================================
+   REUSABLE SCROLL REVEAL SYSTEM
+   Triggers ONCE via IntersectionObserver
+   =================================================== */
+
+.reveal-init {
+  opacity: 0;
+  transition-property: opacity, transform;
+  transition-duration: 550ms;
+  transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
 }
 
-.anim-float {
-  animation: floatGentle 5s ease-in-out infinite;
+.reveal-fade-up {
+  transform: translateY(18px);
 }
 
+.reveal-fade-down {
+  transform: translateY(-16px);
+}
+
+.reveal-fade-left {
+  transform: translateX(18px);
+}
+
+.reveal-fade-right {
+  transform: translateX(-18px);
+}
+
+.reveal-scale {
+  transform: scale(1.02);
+}
+
+.reveal-fade {
+  transform: none;
+}
+
+/* Revealed State */
+.reveal-init.is-revealed {
+  opacity: 1;
+  transform: translate(0, 0) scale(1);
+}
+
+/* Stagger Delays */
+.delay-50 { transition-delay: 50ms; }
+.delay-70 { transition-delay: 70ms; }
+.delay-80 { transition-delay: 80ms; }
+.delay-100 { transition-delay: 100ms; }
+.delay-140 { transition-delay: 140ms; }
+.delay-150 { transition-delay: 150ms; }
+.delay-200 { transition-delay: 200ms; }
+.delay-210 { transition-delay: 210ms; }
+.delay-250 { transition-delay: 250ms; }
+.delay-280 { transition-delay: 280ms; }
+.delay-300 { transition-delay: 300ms; }
+.delay-350 { transition-delay: 350ms; }
+.delay-400 { transition-delay: 400ms; }
+.delay-450 { transition-delay: 450ms; }
+.delay-500 { transition-delay: 500ms; }
+.delay-550 { transition-delay: 550ms; }
+.delay-600 { transition-delay: 600ms; }
+
+/* ===================================================
+   HERO ENTRANCE SEQUENCE (Fast Stagger on Mount)
+   =================================================== */
+
+@keyframes heroRiseFade {
+  0% {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroImageReveal {
+  0% {
+    opacity: 0;
+    transform: scale(1.018);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.hero-seq-eyebrow {
+  animation: heroRiseFade 500ms cubic-bezier(0.22, 1, 0.36, 1) 0ms forwards;
+}
+
+.hero-seq-title {
+  animation: heroRiseFade 550ms cubic-bezier(0.22, 1, 0.36, 1) 80ms forwards;
+}
+
+.hero-seq-desc {
+  animation: heroRiseFade 550ms cubic-bezier(0.22, 1, 0.36, 1) 150ms forwards;
+}
+
+.hero-seq-cta {
+  animation: heroRiseFade 550ms cubic-bezier(0.22, 1, 0.36, 1) 210ms forwards;
+}
+
+.hero-seq-trust {
+  animation: heroRiseFade 550ms cubic-bezier(0.22, 1, 0.36, 1) 280ms forwards;
+}
+
+.hero-seq-img {
+  animation: heroImageReveal 700ms cubic-bezier(0.22, 1, 0.36, 1) 100ms forwards;
+  will-change: opacity, transform;
+}
+
+/* ===================================================
+   CUSTOM TIMELINE & PROCESS DRAW LINES
+   =================================================== */
+
+.timeline-line-draw {
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 850ms cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
+}
+
+.timeline-line-draw.is-revealed {
+  transform: scaleX(1);
+}
+
+.steps-track-draw {
+  transform: scaleY(0);
+  transform-origin: top center;
+  transition: transform 850ms cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
+}
+
+.steps-track-draw.is-revealed {
+  transform: scaleY(1);
+}
+
+/* Map Arc Progressive Dash Draw */
+.map-arc-animated {
+  stroke-dasharray: 240;
+  stroke-dashoffset: 240;
+  transition: stroke-dashoffset 1200ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.is-revealed .map-arc-animated,
+.map-arc-animated.is-revealed {
+  stroke-dashoffset: 0;
+}
+
+/* Small Subdued Pulse for Network HQ */
+@keyframes subtleHqGlow {
+  0%, 100% {
+    r: 10;
+    opacity: 0.25;
+  }
+  50% {
+    r: 14;
+    opacity: 0.45;
+  }
+}
+
+.map-hq-glow {
+  animation: subtleHqGlow 3.5s ease-in-out infinite;
+}
+
+/* Spinner for Form Submission */
+@keyframes submitSpinner {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.btn-spinner {
+  width: 14px;
+  height: 14px;
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  border-top-color: #ffffff;
+  border-radius: 50%;
+  animation: submitSpinner 700ms linear infinite;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* ===================================================
+   ACCESSIBILITY: PREFERS REDUCED MOTION
+   =================================================== */
 @media (prefers-reduced-motion: reduce) {
-  .anim-flow-line,
-  .anim-pulse-subtle,
-  .anim-float {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .reveal-init {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .timeline-line-draw,
+  .steps-track-draw {
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .map-arc-animated {
+    stroke-dashoffset: 0 !important;
+  }
+
+  .map-hq-glow {
+    animation: none !important;
+  }
+
+  .page-enter {
     animation: none !important;
   }
 }

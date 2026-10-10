@@ -759,13 +759,15 @@
   display: flex;
   flex-direction: column;
   box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.05);
-  transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
+  transition: transform 350ms cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 350ms cubic-bezier(0.22, 1, 0.36, 1),
+              border-color 300ms ease;
 }
 
 .capability-card:hover {
-  transform: translateY(-5px);
-  border-color: #86efac;
-  box-shadow: 0 12px 30px -4px rgba(22, 163, 74, 0.12), 0 4px 12px -2px rgba(15, 23, 42, 0.04);
+  transform: translateY(-5px) scale(1.01);
+  border-color: rgba(95, 165, 45, 0.35);
+  box-shadow: 0 10px 28px rgba(15, 23, 42, 0.08);
 }
 
 .capability-media-wrap {
@@ -783,11 +785,12 @@
   object-fit: cover;
   display: block;
   border-radius: 12px;
-  transition: transform 320ms ease;
+  transition: transform 550ms cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
 }
 
 .capability-card:hover .capability-thumb-img {
-  transform: scale(1.03);
+  transform: scale(1.025);
 }
 
 .capability-badge {
@@ -805,11 +808,12 @@
   justify-content: center;
   color: var(--brand-green);
   z-index: 2;
-  transition: transform 200ms ease;
+  transition: transform 240ms cubic-bezier(0.22, 1, 0.36, 1), background-color 200ms ease;
 }
 
 .capability-card:hover .capability-badge {
-  transform: translateY(-2px);
+  transform: translateY(-1px);
+  background-color: #f0fdf4;
 }
 
 .capability-body {
@@ -848,7 +852,7 @@
 }
 
 .capability-learn-arrow {
-  transition: transform 180ms ease;
+  transition: transform 240ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .capability-card:hover .capability-learn-link {
@@ -960,6 +964,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  transition: transform 240ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .why-choose-pillar-icon {
@@ -968,12 +973,18 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: transform 200ms ease, color 200ms ease;
+  transition: transform 240ms cubic-bezier(0.22, 1, 0.36, 1),
+              color 200ms ease,
+              filter 240ms ease;
+}
+
+.why-choose-pillar-item:hover {
+  transform: translateY(-2px);
 }
 
 .why-choose-pillar-item:hover .why-choose-pillar-icon {
-  transform: translateY(-2px);
   color: var(--brand-green);
+  filter: drop-shadow(0 0 6px rgba(95, 165, 45, 0.4));
 }
 
 .why-choose-pillar-text {
@@ -983,6 +994,7 @@
   line-height: 1.35;
   white-space: normal;
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  transition: color 200ms ease;
 }
 
 /* Right Column Quote Callout */
@@ -1109,13 +1121,15 @@
   gap: 1.25rem;
   align-items: center;
   box-shadow: 0 4px 18px rgba(15, 23, 42, 0.04);
-  transition: all 260ms cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 350ms cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 350ms cubic-bezier(0.22, 1, 0.36, 1),
+              border-color 300ms ease;
 }
 
 .leadership-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 14px 28px rgba(8, 44, 70, 0.09);
-  border-color: rgba(95, 165, 45, 0.5);
+  box-shadow: 0 12px 28px rgba(8, 44, 70, 0.09);
+  border-color: rgba(95, 165, 45, 0.4);
 }
 
 .leader-portrait-wrap {
@@ -1134,6 +1148,12 @@
   height: 100%;
   object-fit: cover;
   display: block;
+  transition: transform 550ms cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
+}
+
+.leadership-card:hover .leader-portrait-img {
+  transform: scale(1.015);
 }
 
 .leader-card-info {
@@ -1141,6 +1161,11 @@
   flex-direction: column;
   justify-content: center;
   flex-grow: 1;
+  transition: transform 260ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.leadership-card:hover .leader-card-info {
+  transform: translateY(-2px);
 }
 
 .leader-name {
