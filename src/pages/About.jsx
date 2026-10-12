@@ -223,6 +223,22 @@ export default function About() {
                   <ArrowRight size={17} className="btn-arrow-icon" />
                 </button>
               </div>
+
+              {/* Mobile Advantage Strip (3 compact equal items in 1 row) */}
+              <div className="about-hero-mobile-advantage-strip">
+                <div className="hero-adv-item">
+                  <Globe2 size={16} className="hero-adv-icon" />
+                  <span>Global Perspective</span>
+                </div>
+                <div className="hero-adv-item">
+                  <Compass size={16} className="hero-adv-icon" />
+                  <span>Practical Solutions</span>
+                </div>
+                <div className="hero-adv-item">
+                  <Users size={16} className="hero-adv-icon" />
+                  <span>Lasting Partnerships</span>
+                </div>
+              </div>
             </div>
 
             {/* Right Image Composition (~57-59%) */}
@@ -265,8 +281,18 @@ export default function About() {
             </div>
           </div>
 
-          {/* Full-Width Horizontal Stats Strip */}
+          {/* Full-Width Horizontal Stats Strip / Mobile Impact Section */}
           <div className="about-ref-stats-strip">
+            {/* Mobile-Only Impact Eyebrow & Heading */}
+            <div className="about-stats-mobile-header">
+              <div className="section-label-row">
+                <span className="section-index-line" />
+                <span className="section-index-tag">OUR IMPACT</span>
+              </div>
+              <h2 className="stats-mobile-title">Numbers That Reflect Our Journey.</h2>
+              <p className="stats-mobile-sub">A track record built on trust, relationships and real outcomes.</p>
+            </div>
+
             <div className="about-ref-stats-container">
               {/* Stat 1: Shield/Check - 30+ */}
               <div className="about-ref-stat-col reveal-init reveal-fade-up delay-70">
@@ -338,6 +364,24 @@ export default function About() {
                 </div>
               </div>
             </div>
+
+            {/* Mobile Integrated Meeting Image & Quote */}
+            <div className="about-stats-mobile-visual">
+              <div className="stats-meeting-photo-frame">
+                <img
+                  src={advisoryMeetingImg}
+                  alt="Financial Advisory Meeting"
+                  className="stats-meeting-photo"
+                  loading="lazy"
+                />
+              </div>
+              <div className="stats-mobile-quote-card">
+                <span className="quote-icon-leaf" aria-hidden="true">“</span>
+                <p className="stats-mobile-quote-text">
+                  Financial advisory is not only about arranging capital. It is about structuring the right opportunity.
+                </p>
+              </div>
+            </div>
           </div>
         </section>
 
@@ -379,6 +423,28 @@ export default function About() {
                   <span>PRACTICAL SOLUTIONS</span>
                   <span className="pill-dot">•</span>
                   <span>LASTING PARTNERSHIPS</span>
+                </div>
+
+                {/* Mobile-Only 3 Value Tiles below building image */}
+                <div className="whoweare-mobile-value-tiles">
+                  <div className="whoweare-val-tile">
+                    <div className="val-tile-icon-circle">
+                      <Compass size={17} />
+                    </div>
+                    <span className="val-tile-title">Deep Expertise</span>
+                  </div>
+                  <div className="whoweare-val-tile">
+                    <div className="val-tile-icon-circle">
+                      <ShieldCheck size={17} />
+                    </div>
+                    <span className="val-tile-title">Client-First Approach</span>
+                  </div>
+                  <div className="whoweare-val-tile">
+                    <div className="val-tile-icon-circle">
+                      <Users size={17} />
+                    </div>
+                    <span className="val-tile-title">Long-Term Relationships</span>
+                  </div>
                 </div>
               </div>
 
@@ -523,6 +589,19 @@ export default function About() {
                 </h3>
                 <p className="philosophy-col-desc">
                   Our structuring advice is always aligned with your sustainable growth, risk mitigation, and long-term capital health.
+                </p>
+              </div>
+
+              {/* Column 4 - 2x2 Mobile Grid Partner */}
+              <div className="philosophy-col philosophy-col-fourth reveal-init reveal-fade-up delay-280">
+                <div className="philosophy-icon-circle">
+                  <ShieldCheck size={24} strokeWidth={2.2} />
+                </div>
+                <h3 className="philosophy-col-title">
+                  Integrity in <br /> every engagement.
+                </h3>
+                <p className="philosophy-col-desc">
+                  We maintain uncompromising professional ethics and transparent counsel in every advisory mandate.
                 </p>
               </div>
             </div>
@@ -855,6 +934,16 @@ export default function About() {
                         <div className="leader-badge-arrow">
                           <ArrowRight size={15} />
                         </div>
+                      </div>
+                    </div>
+
+                    {/* Mobile Caption below photo (Side-by-side card layout) */}
+                    <div className="leader-mobile-card-info">
+                      <h3 className="leader-mobile-name">{leader.name}</h3>
+                      <div className="leader-mobile-role">{leader.role}</div>
+                      <div className="leader-mobile-link">
+                        <span>View Profile</span>
+                        <ArrowRight size={12} />
                       </div>
                     </div>
                   </div>

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import {
   ArrowRight,
+  ArrowLeft,
   ShieldCheck,
   Globe2,
   TrendingUp,
@@ -12,6 +13,7 @@ import {
   MapPin,
   Trophy,
   BarChart3,
+  LineChart,
   Phone,
   Mail,
   Quote,
@@ -23,6 +25,7 @@ import AnimatedCounter from "../components/common/AnimatedCounter";
 import useScrollReveal from "../hooks/useScrollReveal";
 
 import heroBannerImg from "../assets/images/Business Professionals Overlooking Container Port.png";
+import heroMobilePortraitImg from "../assets/images/mobile-hero-portrait.jpg";
 import aboutHqBuildingImg from "../assets/images/Modern FXTrade Corporate Headquarters.png";
 import intlTradeCargoImg from "../assets/images/intl-trade-cargo-port.jpg";
 import serviceDomesticThumb from "../assets/images/service-domestic-thumb.jpg";
@@ -42,16 +45,16 @@ const corePillFeatures = [
     path: "/services/debt-syndication"
   },
   {
+    icon: Globe2,
+    title: "Trade Finance",
+    subtitle: "Inland & international supplier credit",
+    path: "/services/international-trade-finance"
+  },
+  {
     icon: TrendingUp,
     title: "SCF & Invoice Factoring",
     subtitle: "Unsecured domestic & export discounting",
     path: "/services/domestic-trade-finance"
-  },
-  {
-    icon: Globe2,
-    title: "Trade Finance Solutions",
-    subtitle: "Inland & international supplier credit",
-    path: "/services/international-trade-finance"
   },
   {
     icon: ShieldCheck,
@@ -124,6 +127,42 @@ export default function Home() {
     service: ""
   });
   const [formSubmitted, setFormSubmitted] = useState(false);
+  const [activeCapSlide, setActiveCapSlide] = useState(0);
+  const capSliderRef = React.useRef(null);
+
+  const handleCapScroll = () => {
+    if (!capSliderRef.current) return;
+    const el = capSliderRef.current;
+    const cards = el.querySelectorAll(".capability-card");
+    if (!cards.length) return;
+    const scrollLeft = el.scrollLeft;
+    let closestIdx = 0;
+    let minDiff = Infinity;
+    cards.forEach((card, i) => {
+      const cardOffset = card.offsetLeft - el.offsetLeft;
+      const diff = Math.abs(scrollLeft - cardOffset);
+      if (diff < minDiff) {
+        minDiff = diff;
+        closestIdx = i;
+      }
+    });
+    if (closestIdx !== activeCapSlide) {
+      setActiveCapSlide(closestIdx);
+    }
+  };
+
+  const scrollToCapSlide = (idx) => {
+    if (!capSliderRef.current) return;
+    const el = capSliderRef.current;
+    const cards = el.querySelectorAll(".capability-card");
+    if (!cards[idx]) return;
+    const targetCard = cards[idx];
+    el.scrollTo({
+      left: targetCard.offsetLeft - el.offsetLeft,
+      behavior: "smooth"
+    });
+    setActiveCapSlide(idx);
+  };
 
   // Subtle scroll depth tracking (bounded, disabled on mobile/reduced-motion)
   useEffect(() => {
@@ -165,35 +204,54 @@ export default function Home() {
   return (
     <PageShell>
       <div ref={scrollRef}>
-        {/* 1. HERO SECTION (Wide Compact Banner matching Reference Image 1) */}
+        {/* 1. HERO SECTION (Wide Compact Banner on Desktop; Full-Bleed Visual Hero on Mobile) */}
         <section className="home-hero-section">
+          {/* Mobile Dark Gradient Overlay (active only on mobile <= 767px) */}
+          <div className="hero-mobile-overlay" aria-hidden="true" />
+
           <div className="hero-container">
             <div className="home-hero-grid">
               <div className="hero-left">
                 <span className="hero-eyebrow hero-seq-eyebrow">
+                  <span className="hero-eyebrow-dash" aria-hidden="true" />
                   BANKING &amp; FINANCIAL SERVICES • CORPORATE FINANCE
                 </span>
 
                 <h1 className="hero-title hero-seq-title">
-                  Enabling Business Growth <br className="hero-desktop-br" />
-                  Through Structured <br className="hero-desktop-br" />
-                  Financial Expertise
+                  <span className="hero-title-main">
+                    Enabling Business <br className="hero-mobile-br" />
+                    Growth Through <br className="hero-mobile-br" />
+                    Structured{" "}
+                  </span>
+                  <span className="hero-title-highlight">
+                    Financial <br className="hero-mobile-br" />
+                    Expertise
+                  </span>
                 </h1>
 
                 <p className="hero-description hero-seq-desc">
-                  We help SMEs, Mid-Corporates and EPC Contractors unlock growth opportunities with tailored Corporate Finance, Debt Syndication, SCF Products, and Structured Funding solutions.
+                  <span className="hero-desc-desktop">
+                    We help SMEs, Mid-Corporates and EPC Contractors unlock growth with tailored Corporate Finance, Debt Syndication, SCF Products, and Funding solutions.
+                  </span>
+                  <span className="hero-desc-mobile">
+                    Tailored Corporate Finance, Debt Syndication <br className="hero-mobile-br" />
+                    &amp; Structured Funding solutions to unlock <br className="hero-mobile-br" />
+                    growth for SMEs and Mid-Corporates.
+                  </span>
                 </p>
 
                 <div className="hero-cta-group hero-seq-cta">
-                  <Link to="/services" className="btn btn-navy btn-hero">
+                  <Link to="/services" className="btn btn-navy btn-hero btn-hero-primary">
                     <span>Explore Our Services</span>
-                    <ArrowRight size={17} />
+                    <ArrowRight size={17} className="btn-hero-arrow" />
                   </Link>
-                  <Link to="/contact" className="btn btn-outline btn-hero">
+                  <Link to="/contact" className="btn btn-outline btn-hero btn-hero-secondary">
                     <span>Get In Touch</span>
+                    <ArrowRight size={17} className="btn-hero-arrow-sec" />
                   </Link>
                 </div>
 
+                {/* Institutional Credibility Strip (Desktop Only) */}
                 <div className="hero-trust-strip hero-seq-trust">
                   <div className="hero-trust-item">
                     <div className="trust-item-icon-box">
@@ -233,21 +291,66 @@ export default function Home() {
 
               <div className="hero-right">
                 <div className="hero-image-frame">
-                  <img
-                    src={heroBannerImg}
-                    alt="Business Professionals Overlooking Container Port"
-                    className="hero-main-photo hero-seq-img"
-                    style={{ transform: `translateY(${heroParallax}px)` }}
-                  />
+                  <picture className="hero-picture-wrap">
+                    <source
+                      media="(max-width: 767px)"
+                      srcSet={heroMobilePortraitImg}
+                    />
+                    <img
+                      src={heroBannerImg}
+                      alt="Business Professionals Overlooking Container Port"
+                      className="hero-main-photo hero-seq-img"
+                      style={{ transform: `translateY(${heroParallax}px)` }}
+                    />
+                  </picture>
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* 2. COMPACT CAPABILITY STRIP (Directly attached below hero) */}
+        {/* 2. COMPACT CAPABILITY STRIP & MOBILE 4-STAT ROW */}
         <section className="below-hero-strip">
           <div className="hero-container">
+            {/* Mobile-Only 4 Stats in ONE compact row (Hidden on Desktop >= 768px) */}
+            <div className="mobile-hero-stats-card">
+              <div className="mobile-stat-col">
+                <div className="mobile-stat-icon-wrap">
+                  <Trophy size={16} className="mobile-stat-icon" />
+                </div>
+                <span className="mobile-stat-val">30+</span>
+                <span className="mobile-stat-lbl">Years Experience</span>
+              </div>
+              <div className="mobile-stat-divider" />
+
+              <div className="mobile-stat-col">
+                <div className="mobile-stat-icon-wrap">
+                  <Users size={16} className="mobile-stat-icon" />
+                </div>
+                <span className="mobile-stat-val">500+</span>
+                <span className="mobile-stat-lbl">Clients Served</span>
+              </div>
+              <div className="mobile-stat-divider" />
+
+              <div className="mobile-stat-col">
+                <div className="mobile-stat-icon-wrap">
+                  <MapPin size={16} className="mobile-stat-icon" />
+                </div>
+                <span className="mobile-stat-val">10+</span>
+                <span className="mobile-stat-lbl">Global Locations</span>
+              </div>
+              <div className="mobile-stat-divider" />
+
+              <div className="mobile-stat-col">
+                <div className="mobile-stat-icon-wrap">
+                  <BarChart3 size={16} className="mobile-stat-icon" />
+                </div>
+                <span className="mobile-stat-val">95%</span>
+                <span className="mobile-stat-lbl">Client Satisfaction</span>
+              </div>
+            </div>
+
+            {/* Service Shortcuts (Desktop: 4 columns in 1 row; Mobile: 2x2 grid) */}
             <div className="pill-features-grid">
               {corePillFeatures.map((item, idx) => {
                 const IconComp = item.icon;
@@ -265,6 +368,7 @@ export default function Home() {
                       <h4 className="pill-feature-title">{item.title}</h4>
                       <p className="pill-feature-sub">{item.subtitle}</p>
                     </div>
+                    <ArrowRight size={14} className="pill-feature-arrow" />
                   </Link>
                 );
               })}
@@ -289,12 +393,18 @@ export default function Home() {
 
               {/* Right Column: Text Content Block */}
               <div className="about-content-col reveal-init reveal-fade-left">
-                <span className="about-eyebrow">ABOUT FXTRADE</span>
+                <span className="about-eyebrow">
+                  <span className="about-eyebrow-dash" aria-hidden="true" />
+                  ABOUT FXTRADE
+                </span>
                 <h2 className="about-heading">
-                  Experience. Integrity. Global Perspective.
+                  Experience. Integrity.
+                  <br className="about-mobile-br" />
+                  {" "}Global Perspective.
                 </h2>
                 <p className="about-paragraph">
-                  FxTrade Consulting Pvt. Ltd. delivers trusted corporate finance, debt syndication, and structured financial solutions to businesses across India and global markets. We combine deep banking relationships with tailored financial structuring to create sustainable growth opportunities.
+                  FxTrade Consulting Pvt. Ltd. delivers trusted corporate finance, debt syndication, and structured financial solutions to businesses across India and global markets.
+                  <span className="about-desc-desktop"> We combine deep banking relationships with tailored financial structuring to create sustainable growth opportunities.</span>
                 </p>
                 <div className="about-btn-wrap">
                   <Link to="/about" className="btn btn-about-green">
@@ -307,7 +417,7 @@ export default function Home() {
 
             {/* Bottom Row: 4 Stats in Single Horizontal Row */}
             <div className="about-stats-row">
-              <div className="about-stat-item reveal-init reveal-fade-up delay-70">
+              <div className="about-stat-item about-stat-q1 reveal-init reveal-fade-up delay-70">
                 <div className="about-stat-icon-circle">
                   <Trophy size={23} className="stat-lucide-icon" />
                 </div>
@@ -321,7 +431,7 @@ export default function Home() {
 
               <div className="about-stat-divider" />
 
-              <div className="about-stat-item reveal-init reveal-fade-up delay-140">
+              <div className="about-stat-item about-stat-q2 reveal-init reveal-fade-up delay-140">
                 <div className="about-stat-icon-circle">
                   <Users size={23} className="stat-lucide-icon" />
                 </div>
@@ -335,7 +445,7 @@ export default function Home() {
 
               <div className="about-stat-divider" />
 
-              <div className="about-stat-item reveal-init reveal-fade-up delay-210">
+              <div className="about-stat-item about-stat-q3 reveal-init reveal-fade-up delay-210">
                 <div className="about-stat-icon-circle">
                   <MapPin size={23} className="stat-lucide-icon" />
                 </div>
@@ -349,9 +459,9 @@ export default function Home() {
 
               <div className="about-stat-divider" />
 
-              <div className="about-stat-item reveal-init reveal-fade-up delay-280">
+              <div className="about-stat-item about-stat-q4 reveal-init reveal-fade-up delay-280">
                 <div className="about-stat-icon-circle">
-                  <BarChart3 size={23} className="stat-lucide-icon" />
+                  <LineChart size={23} className="stat-lucide-icon" />
                 </div>
                 <div className="about-stat-details">
                   <div className="about-stat-num">
@@ -442,7 +552,11 @@ export default function Home() {
               </Link>
             </div>
 
-            <div className="capabilities-cards-grid">
+            <div
+              className="capabilities-cards-grid"
+              ref={capSliderRef}
+              onScroll={handleCapScroll}
+            >
               {homeServices.map((service, idx) => {
                 const IconComp = service.icon;
                 const delayClass = `delay-${70 * (idx + 1)}`;
@@ -473,6 +587,39 @@ export default function Home() {
                   </div>
                 );
               })}
+            </div>
+
+            {/* Mobile-only slider controls: Prev/Next arrows & Pagination dots */}
+            <div className="capabilities-slider-controls">
+              <button
+                type="button"
+                className="cap-slider-arrow cap-arrow-prev"
+                onClick={() => scrollToCapSlide(Math.max(0, activeCapSlide - 1))}
+                disabled={activeCapSlide === 0}
+                aria-label="Previous service"
+              >
+                <ArrowLeft size={16} />
+              </button>
+              <div className="cap-slider-dots">
+                {homeServices.map((_, dotIdx) => (
+                  <button
+                    key={dotIdx}
+                    type="button"
+                    className={`cap-dot ${dotIdx === activeCapSlide ? "active" : ""}`}
+                    onClick={() => scrollToCapSlide(dotIdx)}
+                    aria-label={`Go to slide ${dotIdx + 1}`}
+                  />
+                ))}
+              </div>
+              <button
+                type="button"
+                className="cap-slider-arrow cap-arrow-next"
+                onClick={() => scrollToCapSlide(Math.min(homeServices.length - 1, activeCapSlide + 1))}
+                disabled={activeCapSlide === homeServices.length - 1}
+                aria-label="Next service"
+              >
+                <ArrowRight size={16} />
+              </button>
             </div>
           </Container>
         </section>
@@ -549,7 +696,9 @@ export default function Home() {
                 <span className="leadership-eyebrow-text">OUR LEADERSHIP</span>
               </div>
               <h2 className="leadership-main-title">
-                Guided by Experience. Driven by Values.
+                Guided by Experience.
+                <br className="leadership-mobile-br" />
+                {" "}Driven by Values.
               </h2>
               <Link to="/about" className="leadership-header-link">
                 <span>Meet Our Team</span>

@@ -106,6 +106,10 @@
   padding-left: 4px;
 }
 
+.footer-link-arrow {
+  display: none;
+}
+
 .footer-contact-list {
   list-style: none;
   display: flex;
@@ -183,31 +187,224 @@
   letter-spacing: 0.01em;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1024px) and (min-width: 768px) {
   .footer-grid {
     grid-template-columns: 1fr 1fr;
     gap: 2.5rem;
   }
 }
 
-@media (max-width: 640px) {
+/* ============================================================
+   MOBILE FOOTER REDESIGN (Reference Match <= 767px)
+   ============================================================ */
+@media (max-width: 767px) {
   .site-footer {
-    padding-top: 3.5rem;
+    padding-top: 36px !important;
+    background-color: #031828 !important;
   }
 
   .footer-main {
-    padding-bottom: 2.5rem;
+    padding-bottom: 22px !important;
   }
 
+  .site-footer .container-custom {
+    padding-left: 18px !important;
+    padding-right: 18px !important;
+  }
+
+  /* 2-Column Grid: Brand full-width, Services & Links side-by-side, Contact full-width */
   .footer-grid {
-    grid-template-columns: 1fr;
-    gap: 2.25rem;
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 22px 16px !important;
+  }
+
+  /* 1. Brand Column (Full Width) */
+  .brand-col {
+    grid-column: 1 / -1 !important;
+  }
+
+  .footer-logo {
+    display: inline-block !important;
+    margin-bottom: 14px !important;
+  }
+
+  .footer-logo-badge {
+    background-color: #ffffff !important;
+    padding: 6px 14px !important;
+    border-radius: 8px !important;
+    display: inline-flex !important;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3) !important;
+  }
+
+  .footer-logo-img {
+    height: 38px !important;
+    width: auto !important;
+    display: block !important;
+  }
+
+  .footer-brand-desc {
+    font-size: 13px !important;
+    line-height: 1.55 !important;
+    color: #94a3b8 !important;
+    margin-bottom: 18px !important;
+    max-width: 100% !important;
+  }
+
+  .footer-socials {
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+  }
+
+  .social-btn {
+    width: 38px !important;
+    height: 38px !important;
+    border-radius: 8px !important;
+    background-color: rgba(255, 255, 255, 0.08) !important;
+    color: #cbd5e1 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  /* 2. Side-by-Side Links Columns */
+  .services-col,
+  .links-col {
+    grid-column: span 1 !important;
+  }
+
+  .footer-col-title {
+    font-size: 15px !important;
+    font-weight: 700 !important;
+    color: #ffffff !important;
+    margin-bottom: 14px !important;
+    letter-spacing: -0.01em !important;
+  }
+
+  .footer-links-list {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 9px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    list-style: none !important;
+  }
+
+  .footer-links-list li {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .footer-links-list a {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+    font-size: 12.5px !important;
+    line-height: 1.35 !important;
+    color: #cbd5e1 !important;
+    text-decoration: none !important;
+    transition: color 180ms ease !important;
+  }
+
+  .footer-links-list a:hover,
+  .footer-links-list a:active {
+    color: #ffffff !important;
+  }
+
+  .footer-link-arrow {
+    display: inline-flex !important;
+    color: #64748b !important;
+    flex-shrink: 0 !important;
+    margin-left: 4px !important;
+  }
+
+  /* 3. Contact Office Column (Full Width with top divider) */
+  .contact-col {
+    grid-column: 1 / -1 !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+    padding-top: 22px !important;
+    margin-top: 2px !important;
+  }
+
+  .footer-contact-list {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 13px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    list-style: none !important;
+  }
+
+  .footer-contact-list li {
+    display: flex !important;
+    align-items: flex-start !important;
+    gap: 11px !important;
+    font-size: 12.5px !important;
+    line-height: 1.45 !important;
+    color: #94a3b8 !important;
+  }
+
+  .contact-icon {
+    color: #16a34a !important;
+    width: 18px !important;
+    height: 18px !important;
+    flex-shrink: 0 !important;
+    margin-top: 2px !important;
+  }
+
+  .footer-contact-list a {
+    color: #ffffff !important;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    text-decoration: none !important;
+  }
+
+  .contact-sub {
+    color: #64748b !important;
+    font-size: 12px !important;
+  }
+
+  /* 4. Footer Bottom Bar */
+  .footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+    padding: 16px 0 !important;
   }
 
   .footer-bottom-inner {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.85rem;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 5px !important;
+    padding-left: 18px !important;
+    padding-right: 18px !important;
+  }
+
+  .copyright-text {
+    font-size: 11px !important;
+    color: #64748b !important;
+    margin: 0 !important;
+  }
+
+  .footer-bottom-links {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 6px !important;
+    font-size: 11px !important;
+    color: #64748b !important;
+  }
+
+  .developer-credit-text {
+    font-size: 11px !important;
+    color: #64748b !important;
+  }
+
+  .developer-name {
+    color: #94a3b8 !important;
+    font-weight: 600 !important;
   }
 }
 

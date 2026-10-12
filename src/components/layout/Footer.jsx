@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Phone, Mail, MapPin, Clock } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, ChevronRight } from "lucide-react";
 import {
   LinkedInIcon,
   FacebookIcon,
@@ -86,60 +86,80 @@ export default function Footer() {
           </div>
 
           {/* Column 2: Services */}
-          <div className="footer-col">
+          <div className="footer-col services-col">
             <h4 className="footer-col-title">Our Services</h4>
             <ul className="footer-links-list">
               <li>
                 <Link to="/services">
-                  Corporate Finance
+                  <span>Corporate Finance</span>
+                  <ChevronRight size={13} className="footer-link-arrow" />
                 </Link>
               </li>
               <li>
                 <Link to="/services/debt-syndication">
-                  Debt Syndication
+                  <span>Debt Syndication</span>
+                  <ChevronRight size={13} className="footer-link-arrow" />
                 </Link>
               </li>
               <li>
                 <Link to="/services/international-trade-finance">
-                  SCF Products & Structured Funding
+                  <span>SCF Products</span>
+                  <ChevronRight size={13} className="footer-link-arrow" />
                 </Link>
               </li>
               <li>
                 <Link to="/services/domestic-trade-finance">
-                  Invoice Discounting / Factoring
+                  <span>Invoice Discounting</span>
+                  <ChevronRight size={13} className="footer-link-arrow" />
                 </Link>
               </li>
               <li>
                 <Link to="/services/forex-services">
-                  Credit Rating & Unsecured Funding
+                  <span>Credit Rating & Funding</span>
+                  <ChevronRight size={13} className="footer-link-arrow" />
                 </Link>
               </li>
               <li>
                 <Link to="/services">
-                  All Services Directory
+                  <span>All Services</span>
+                  <ChevronRight size={13} className="footer-link-arrow" />
                 </Link>
               </li>
             </ul>
           </div>
 
           {/* Column 3: Quick Links */}
-          <div className="footer-col">
+          <div className="footer-col links-col">
             <h4 className="footer-col-title">Quick Links</h4>
             <ul className="footer-links-list">
               <li>
-                <Link to="/">Home</Link>
+                <Link to="/">
+                  <span>Home</span>
+                  <ChevronRight size={13} className="footer-link-arrow" />
+                </Link>
               </li>
               <li>
-                <Link to="/about">About Us</Link>
+                <Link to="/about">
+                  <span>About Us</span>
+                  <ChevronRight size={13} className="footer-link-arrow" />
+                </Link>
               </li>
               <li>
-                <Link to="/contact">Contact Us</Link>
+                <Link to="/contact">
+                  <span>Contact Us</span>
+                  <ChevronRight size={13} className="footer-link-arrow" />
+                </Link>
               </li>
               <li>
-                <Link to="/about#what-we-offer">What We Offer</Link>
+                <Link to="/about#what-we-offer">
+                  <span>What We Offer</span>
+                  <ChevronRight size={13} className="footer-link-arrow" />
+                </Link>
               </li>
               <li>
-                <Link to="/contact">Request Consultation</Link>
+                <Link to="/contact">
+                  <span>Request Consultation</span>
+                </Link>
               </li>
             </ul>
           </div>

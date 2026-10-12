@@ -34,6 +34,51 @@
   border-bottom: 1px solid var(--border-light);
 }
 
+/* Mobile-only hero elements hidden on desktop by default */
+.hero-mobile-overlay {
+  display: none;
+}
+
+.hero-eyebrow-dash {
+  display: none;
+}
+
+.hero-title-main {
+  color: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  display: inline;
+}
+
+.hero-title-highlight {
+  color: var(--brand-green);
+  font-size: inherit;
+  font-weight: inherit;
+  display: inline;
+}
+
+.btn-hero-arrow-sec {
+  display: none;
+}
+
+.mobile-hero-stats-card {
+  display: none;
+}
+
+.pill-feature-arrow {
+  display: none;
+}
+
+.hero-mobile-br {
+  display: none;
+}
+
+.hero-picture-wrap {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
 .home-hero-grid {
   display: grid;
   grid-template-columns: 48fr 52fr;
@@ -81,6 +126,14 @@
   color: var(--text-secondary);
   max-width: 530px;
   margin-bottom: 26px;
+}
+
+.hero-desc-mobile {
+  display: none;
+}
+
+.hero-desc-desktop {
+  display: inline;
 }
 
 .hero-cta-group {
@@ -182,26 +235,22 @@
   box-shadow: none;
   border: none;
   background-color: transparent;
-  -webkit-mask-image: linear-gradient(
-    to right,
-    transparent 0%,
-    rgba(0, 0, 0, 0.03) 3%,
-    rgba(0, 0, 0, 0.15) 7%,
-    rgba(0, 0, 0, 0.42) 13%,
-    rgba(0, 0, 0, 0.76) 20%,
-    rgba(0, 0, 0, 0.94) 26%,
-    #000000 32%
-  );
-  mask-image: linear-gradient(
-    to right,
-    transparent 0%,
-    rgba(0, 0, 0, 0.03) 3%,
-    rgba(0, 0, 0, 0.15) 7%,
-    rgba(0, 0, 0, 0.42) 13%,
-    rgba(0, 0, 0, 0.76) 20%,
-    rgba(0, 0, 0, 0.94) 26%,
-    #000000 32%
-  );
+  -webkit-mask-image: linear-gradient(to right,
+      transparent 0%,
+      rgba(0, 0, 0, 0.03) 3%,
+      rgba(0, 0, 0, 0.15) 7%,
+      rgba(0, 0, 0, 0.42) 13%,
+      rgba(0, 0, 0, 0.76) 20%,
+      rgba(0, 0, 0, 0.94) 26%,
+      #000000 32%);
+  mask-image: linear-gradient(to right,
+      transparent 0%,
+      rgba(0, 0, 0, 0.03) 3%,
+      rgba(0, 0, 0, 0.15) 7%,
+      rgba(0, 0, 0, 0.42) 13%,
+      rgba(0, 0, 0, 0.76) 20%,
+      rgba(0, 0, 0, 0.94) 26%,
+      #000000 32%);
 }
 
 .hero-main-photo {
@@ -348,6 +397,15 @@
   letter-spacing: 0.08em;
   margin-bottom: 12px;
   display: inline-block;
+}
+
+.about-eyebrow-dash,
+.about-mobile-br {
+  display: none;
+}
+
+.about-desc-desktop {
+  display: inline;
 }
 
 .about-heading {
@@ -750,6 +808,10 @@
   gap: clamp(20px, 2vw, 26px);
 }
 
+.capabilities-slider-controls {
+  display: none;
+}
+
 /* Individual Card */
 .capability-card {
   background-color: #ffffff;
@@ -760,8 +822,8 @@
   flex-direction: column;
   box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.05);
   transition: transform 350ms cubic-bezier(0.22, 1, 0.36, 1),
-              box-shadow 350ms cubic-bezier(0.22, 1, 0.36, 1),
-              border-color 300ms ease;
+    box-shadow 350ms cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 300ms ease;
 }
 
 .capability-card:hover {
@@ -893,16 +955,14 @@
 .why-choose-bg-tint {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    90deg,
-    rgba(8, 24, 44, 0.98) 0%,
-    rgba(8, 26, 48, 0.95) 28%,
-    rgba(9, 31, 58, 0.72) 40%,
-    rgba(11, 40, 75, 0.12) 54%,
-    rgba(11, 40, 75, 0.35) 72%,
-    rgba(8, 24, 44, 0.88) 84%,
-    rgba(8, 24, 44, 0.96) 100%
-  );
+  background: linear-gradient(90deg,
+      rgba(8, 24, 44, 0.98) 0%,
+      rgba(8, 26, 48, 0.95) 28%,
+      rgba(9, 31, 58, 0.72) 40%,
+      rgba(11, 40, 75, 0.12) 54%,
+      rgba(11, 40, 75, 0.35) 72%,
+      rgba(8, 24, 44, 0.88) 84%,
+      rgba(8, 24, 44, 0.96) 100%);
 }
 
 .why-choose-container-relative {
@@ -974,8 +1034,8 @@
   align-items: center;
   justify-content: center;
   transition: transform 240ms cubic-bezier(0.22, 1, 0.36, 1),
-              color 200ms ease,
-              filter 240ms ease;
+    color 200ms ease,
+    filter 240ms ease;
 }
 
 .why-choose-pillar-item:hover {
@@ -1080,6 +1140,10 @@
   margin: 0 0 10px 0;
 }
 
+.leadership-mobile-br {
+  display: none;
+}
+
 .leadership-header-link {
   font-size: 1.02rem;
   font-weight: 700;
@@ -1122,8 +1186,8 @@
   align-items: center;
   box-shadow: 0 4px 18px rgba(15, 23, 42, 0.04);
   transition: transform 350ms cubic-bezier(0.22, 1, 0.36, 1),
-              box-shadow 350ms cubic-bezier(0.22, 1, 0.36, 1),
-              border-color 300ms ease;
+    box-shadow 350ms cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 300ms ease;
 }
 
 .leadership-card:hover {
@@ -1306,13 +1370,11 @@
 .contact-dark-tint {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    90deg,
-    rgba(8, 26, 48, 0.86) 0%,
-    rgba(9, 31, 58, 0.74) 38%,
-    rgba(11, 40, 75, 0.54) 70%,
-    rgba(14, 48, 88, 0.38) 100%
-  );
+  background: linear-gradient(90deg,
+      rgba(8, 26, 48, 0.86) 0%,
+      rgba(9, 31, 58, 0.74) 38%,
+      rgba(11, 40, 75, 0.54) 70%,
+      rgba(14, 48, 88, 0.38) 100%);
 }
 
 .contact-container-relative {
@@ -1579,6 +1641,7 @@
     opacity: 0;
     transform: scale(0.96) translateY(8px);
   }
+
   to {
     opacity: 1;
     transform: scale(1) translateY(0);
@@ -1698,7 +1761,8 @@
   }
 
   .hero-right {
-    order: 1; /* Displays hero photo first on tablet & mobile */
+    order: 1;
+    /* Displays hero photo first on tablet & mobile */
     height: auto;
     position: relative;
     overflow: hidden;
@@ -1783,13 +1847,11 @@
   }
 
   .why-choose-bg-tint {
-    background: linear-gradient(
-      180deg,
-      rgba(8, 24, 44, 0.96) 0%,
-      rgba(8, 26, 48, 0.90) 25%,
-      rgba(9, 31, 58, 0.88) 60%,
-      rgba(8, 24, 44, 0.98) 100%
-    );
+    background: linear-gradient(180deg,
+        rgba(8, 24, 44, 0.96) 0%,
+        rgba(8, 26, 48, 0.90) 25%,
+        rgba(9, 31, 58, 0.88) 60%,
+        rgba(8, 24, 44, 0.98) 100%);
   }
 
   .why-choose-bg-photo {
@@ -1835,156 +1897,1328 @@
   }
 }
 
-@media (max-width: 640px) {
+/* ============================================================
+   MOBILE HOME HERO REDESIGN (Targets <= 767px, primarily 320px–480px)
+   Matches attached reference design composition:
+   1. Compact Navbar
+   2. Large Full-Width Visual Hero with existing image
+   3. Dark Gradient Overlay (translucent top -> rich dark navy bottom)
+   4. Editorial Left-Aligned Content in Lower Half
+   5. Category Label with Green Accent Line
+   6. Main Heading (White + Green Highlight)
+   7. Clean Description
+   8. Stacked CTAs (Green Primary + White-border Secondary)
+   9. 4 Statistics in ONE Compact Mobile Row
+   10. 4 Service Shortcuts in a 2 x 2 Grid
+   ============================================================ */
+/* ============================================================
+   MOBILE HOME HERO REDESIGN (Targets <= 767px, primarily 320px–480px)
+   Matches attached reference design composition:
+   1. Compact Navbar (64-72px)
+   2. Full-bleed Hero Photo with executives positioned toward right
+   3. Dual-Layer Gradient: Horizontal (dark left -> clear right) +
+      Vertical (clear top -> dark bottom)
+   4. Text content pinned to lower-left (away from faces and torso)
+   5. Compact legible Category Label with subtle backing
+   6. Restrained Heading (3 lines, single green accent phrase)
+   7. Crisp 3-line readable Description
+   8. Stacked CTAs (Green Primary + Outline Secondary)
+   9. Refined 4-Stat Strip in ONE compact row (94-105px height)
+   10. 2x2 Service Shortcut Grid with natural wrapping and zero clipping
+   ============================================================ */
+@media (max-width: 767px) {
+  /* 1. Hero Section Container & Height (680–760px range) */
   .home-hero-section {
-    padding-top: 1rem;
-    padding-bottom: 1.25rem;
-  }
-
-  .home-hero-section .hero-container {
-    padding-left: 16px;
-    padding-right: 16px;
-  }
-
-  .home-hero-grid {
-    gap: 1.25rem;
-  }
-
-  .hero-right {
-    order: 1;
-    border-radius: 12px;
-  }
-
-  .hero-image-frame {
-    height: 220px;
-    border-radius: 12px;
-  }
-
-  .hero-main-photo {
-    object-position: center 20%;
-  }
-
-  .hero-left {
-    order: 2;
-  }
-
-  .hero-desktop-br {
-    display: none;
-  }
-
-  .hero-eyebrow {
-    font-size: 0.72rem;
-    letter-spacing: 0.05em;
-    line-height: 1.35;
-    margin-bottom: 8px;
-  }
-
-  .hero-title {
-    font-size: clamp(23px, 6.2vw, 29px);
-    line-height: 1.18;
-    letter-spacing: -0.02em;
-    overflow-wrap: break-word;
-    margin-bottom: 12px;
-  }
-
-  .hero-description {
-    font-size: 0.92rem;
-    line-height: 1.55;
-    margin-bottom: 18px;
-  }
-
-  .hero-cta-group {
-    flex-direction: column;
+    position: relative;
     width: 100%;
-    gap: 0.65rem;
-    margin-bottom: 18px;
-  }
-
-  .hero-cta-group .btn-hero {
-    width: 100%;
-    justify-content: center;
-    padding: 0.82rem 1.4rem;
-    font-size: 0.95rem;
-  }
-
-  .hero-trust-strip {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 0.6rem;
-    width: 100%;
-    padding: 0.75rem 0.9rem;
-    box-shadow: 0 2px 10px rgba(15, 23, 42, 0.04);
-  }
-
-  .hero-trust-item {
-    width: 100%;
-    gap: 0.55rem;
-  }
-
-  .trust-item-icon-box {
-    width: 22px;
-    height: 22px;
-  }
-
-  .trust-item-val {
-    font-size: 0.85rem;
-  }
-
-  .trust-item-lbl {
-    font-size: 0.7rem;
-  }
-
-  .hero-trust-divider {
-    display: none;
-  }
-
-  .pill-features-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .pill-feature-card {
-    border-right: none;
-    border-bottom: 1px solid var(--border-light);
-    padding: 0.95rem 1rem;
-  }
-
-  .pill-feature-card:last-child {
+    min-height: 690px;
+    max-height: 760px;
+    height: 720px !important;
+    overflow: hidden;
+    padding: 0 !important;
+    background-color: #032036;
     border-bottom: none;
   }
 
-  .home-about-section {
-    padding-top: 3.5rem;
-    padding-bottom: 2.5rem;
-  }
-
-  .about-heading {
-    font-size: clamp(24px, 6vw, 32px);
-  }
-
-  .about-paragraph {
-    font-size: 0.96rem;
-  }
-
-  .about-btn-wrap {
+  .home-hero-section .hero-container {
+    position: relative;
+    z-index: 5;
     width: 100%;
+    height: 100%;
+    max-width: 100%;
+    padding: 0 !important;
+  }
+
+  .home-hero-grid {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: block !important;
+  }
+
+  /* Full-bleed hero portrait background */
+  .hero-right {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    z-index: 1 !important;
+    order: unset !important;
+    overflow: hidden !important;
+    border-radius: 0 !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+
+  .hero-image-frame {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    border-radius: 0 !important;
+    overflow: hidden !important;
+    -webkit-mask-image: none !important;
+    mask-image: none !important;
+  }
+
+  .hero-picture-wrap {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  /* Dedicated 9:16 mobile portrait framing */
+  .hero-main-photo {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: right center !important;
+    display: block !important;
+    transform: none !important;
+  }
+
+  /* 2. Deep Navy Gradient Scrim - Clean Contrast for Headline & Paragraph */
+  .hero-image-frame::after {
+    display: none !important;
+  }
+
+  .hero-mobile-overlay {
+    content: "";
+    display: block !important;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+    background:
+      linear-gradient(
+        to bottom,
+        rgba(2, 18, 34, 0.50) 0%,
+        rgba(2, 18, 34, 0.35) 28%,
+        rgba(2, 18, 34, 0.50) 58%,
+        rgba(2, 18, 34, 0.85) 85%,
+        rgba(2, 18, 34, 0.98) 100%
+      ),
+      linear-gradient(
+        to right,
+        rgba(2, 18, 34, 0.80) 0%,
+        rgba(2, 18, 34, 0.62) 46%,
+        rgba(2, 18, 34, 0.18) 75%,
+        rgba(2, 18, 34, 0.00) 100%
+      ) !important;
+  }
+
+  /* 3. Text Content - Eyebrow, Heading matching desired composition */
+  .hero-left {
+    position: absolute !important;
+    inset: 0 !important;
+    padding: 48px 20px 24px 20px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    text-align: left !important;
+    z-index: 10 !important;
+    width: 100% !important;
+    height: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* 4. Category Eyebrow Label - Ample spacing pushing heading down */
+  .hero-eyebrow {
+    display: inline-flex !important;
+    align-items: center;
+    gap: 6px;
+    color: #22c55e !important;
+    font-size: 11px !important;
+    font-weight: 700 !important;
+    text-transform: uppercase;
+    letter-spacing: 0.04em !important;
+    line-height: 1.25 !important;
+    margin-bottom: 56px !important;
+    background: rgba(2, 20, 36, 0.80) !important;
+    padding: 3.5px 9px 3.5px 7px !important;
+    border-radius: 4px !important;
+    backdrop-filter: blur(6px) !important;
+    width: fit-content;
+  }
+
+  .hero-eyebrow-dash {
+    display: inline-block !important;
+    width: 12px;
+    height: 2px;
+    background-color: #22c55e;
+    border-radius: 1px;
+    flex-shrink: 0;
+  }
+
+  /* 5. Main Heading (32–36px, strong corporate typography, deep drop shadow) */
+  .hero-title {
+    font-size: clamp(32px, 8.4vw, 36px) !important;
+    line-height: 1.08 !important;
+    font-weight: 800 !important;
+    letter-spacing: -0.025em !important;
+    margin-bottom: 0 !important;
+    text-align: left !important;
+    text-shadow: 0 2px 14px rgba(0, 0, 0, 0.8), 0 1px 3px rgba(0, 0, 0, 0.95) !important;
+    max-width: 360px !important;
+    width: 100%;
+  }
+
+  .hero-mobile-br {
+    display: inline !important;
+  }
+
+  .hero-desktop-br {
+    display: none !important;
+  }
+
+  .hero-title-main {
+    color: #ffffff !important;
+    display: inline;
+  }
+
+  .hero-title-highlight {
+    color: #22c55e !important;
+    display: inline;
+    text-shadow: 0 2px 14px rgba(0, 0, 0, 0.8) !important;
+  }
+
+  .hero-desc-desktop {
+    display: none !important;
+  }
+
+  .hero-desc-mobile {
+    display: inline !important;
+  }
+
+  /* 6. Description - Balanced 3 equal lines in open water space */
+  .hero-description {
+    display: block !important;
+    color: #ffffff !important;
+    opacity: 0.95 !important;
+    font-size: 14px !important;
+    line-height: 1.5 !important;
+    margin-top: 28px !important;
+    margin-bottom: 20px !important;
+    max-width: 340px !important;
+    text-align: left !important;
+    font-weight: 450 !important;
+    text-wrap: balance !important;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.85), 0 1px 2px rgba(0, 0, 0, 0.95) !important;
+  }
+
+  /* 7. Big Mobile CTA Buttons */
+  .hero-cta-group {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    gap: 10px !important;
+    margin-top: auto !important;
+    margin-bottom: 20px !important;
+  }
+
+  .hero-cta-group .btn-hero {
+    width: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border-radius: 8px !important;
+    font-weight: 700 !important;
+    font-size: 15.5px !important;
+    text-decoration: none !important;
+    box-sizing: border-box !important;
+    letter-spacing: -0.01em;
+  }
+
+  .btn-hero-primary {
+    height: 54px !important;
+    background-color: #16a34a !important;
+    color: #ffffff !important;
+    border: none !important;
+    gap: 8px;
+    box-shadow: 0 4px 14px rgba(22, 163, 74, 0.35) !important;
+    transition: background-color 200ms ease, transform 180ms ease, box-shadow 200ms ease !important;
+  }
+
+  .btn-hero-primary:hover,
+  .btn-hero-primary:active {
+    background-color: #15803d !important;
+    transform: scale(0.985);
+  }
+
+  .btn-hero-primary .btn-hero-arrow {
+    transition: transform 200ms ease;
+  }
+
+  .btn-hero-primary:hover .btn-hero-arrow,
+  .btn-hero-primary:active .btn-hero-arrow {
+    transform: translateX(4px);
+  }
+
+  .btn-hero-secondary {
+    height: 52px !important;
+    background-color: rgba(3, 37, 60, 0.45) !important;
+    color: #ffffff !important;
+    border: 1.5px solid rgba(255, 255, 255, 0.85) !important;
+    gap: 8px;
+    transition: background-color 200ms ease, border-color 200ms ease, transform 180ms ease !important;
+  }
+
+  .btn-hero-secondary:hover,
+  .btn-hero-secondary:active {
+    background-color: rgba(255, 255, 255, 0.15) !important;
+    border-color: #ffffff !important;
+    transform: scale(0.985);
+  }
+
+  .btn-hero-arrow-sec {
+    display: inline-flex !important;
+  }
+
+  /* Desktop Trust Strip hidden on mobile */
+  .hero-trust-strip {
+    display: none !important;
+  }
+
+  /* 8. Below Hero Section (Stats + Service Shortcuts) */
+  .below-hero-strip {
+    background-color: #f8fafc !important;
+    padding: 0 0 24px 0 !important;
+    border-bottom: 1px solid var(--border-light) !important;
+    height: auto !important;
+    min-height: auto !important;
+    position: relative;
+    z-index: 20;
+  }
+
+  .below-hero-strip .hero-container {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* 9. Floating 4-Stat Strip in ONE Row */
+  .mobile-hero-stats-card {
+    display: flex !important;
+    align-items: center;
+    justify-content: space-between;
+    background: #ffffff !important;
+    border: 1px solid rgba(226, 232, 240, 0.95) !important;
+    border-radius: 16px !important;
+    padding: 14px 8px !important;
+    min-height: 94px !important;
+    margin-top: -8px !important;
+    margin-bottom: 12px !important;
+    box-shadow: 0 6px 20px rgba(15, 23, 42, 0.08) !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    position: relative;
+    z-index: 25;
+  }
+
+  .mobile-stat-col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    min-width: 0;
+    padding: 0 3px;
+  }
+
+  .mobile-stat-icon-wrap {
+    width: 30px !important;
+    height: 30px !important;
+    border-radius: 50% !important;
+    background: #f0fdf4 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin-bottom: 4px !important;
+    flex-shrink: 0 !important;
+  }
+
+  .mobile-stat-icon {
+    color: #16a34a !important;
+    width: 15px !important;
+    height: 15px !important;
+  }
+
+  .mobile-stat-val {
+    font-size: 20px !important;
+    font-weight: 800 !important;
+    color: #0f172a !important;
+    line-height: 1.1 !important;
+    margin-bottom: 2px !important;
+    letter-spacing: -0.02em !important;
+  }
+
+  .mobile-stat-lbl {
+    font-size: 9.5px !important;
+    font-weight: 600 !important;
+    color: #64748b !important;
+    line-height: 1.25 !important;
+    text-align: center !important;
+    max-width: 72px !important;
+    white-space: normal !important;
+  }
+
+  .mobile-stat-divider {
+    display: block !important;
+    width: 1px !important;
+    min-width: 1px !important;
+    height: 38px !important;
+    background-color: #cbd5e1 !important;
+    background: rgba(15, 23, 42, 0.15) !important;
+    flex-shrink: 0 !important;
+    align-self: center !important;
+    margin: 0 1px !important;
+  }
+
+  /* 10. 2x2 Service Shortcut Grid */
+  .pill-features-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 10px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .pill-feature-card {
+    background: #ffffff !important;
+    border: 1px solid rgba(226, 232, 240, 0.95) !important;
+    border-radius: 12px !important;
+    padding: 12px 10px !important;
+    min-height: 90px !important;
+    display: flex !important;
+    align-items: flex-start !important;
+    gap: 8px !important;
+    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04) !important;
+    text-decoration: none !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+    transition: border-color 180ms ease, background-color 180ms ease, transform 180ms ease !important;
+  }
+
+  .pill-feature-card:hover,
+  .pill-feature-card:active {
+    background-color: #fafcfb !important;
+    border-color: rgba(34, 197, 94, 0.45) !important;
+    transform: translateY(-2px);
+  }
+
+  .pill-feature-icon-box {
+    width: 30px !important;
+    height: 30px !important;
+    border-radius: 8px !important;
+    background: #f0fdf4 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-shrink: 0 !important;
+    margin-top: 1px;
+  }
+
+  .pill-feature-icon-box .pill-icon {
+    color: #16a34a !important;
+    width: 15px !important;
+    height: 15px !important;
+  }
+
+  .pill-feature-content {
+    flex: 1 !important;
+    min-width: 0 !important;
+    overflow: visible !important;
+  }
+
+  .pill-feature-title {
+    font-size: 12px !important;
+    font-weight: 700 !important;
+    color: #0f172a !important;
+    line-height: 1.25 !important;
+    margin: 0 0 3px 0 !important;
+    white-space: normal !important;
+    word-break: normal !important;
+    overflow-wrap: break-word !important;
+  }
+
+  .pill-feature-sub {
+    font-size: 9.5px !important;
+    color: #64748b !important;
+    line-height: 1.3 !important;
+    margin: 0 !important;
+    white-space: normal !important;
+    word-break: normal !important;
+    overflow-wrap: break-word !important;
+  }
+
+  .pill-feature-arrow {
+    display: flex !important;
+    align-items: center;
+    color: #64748b;
+    opacity: 0.65;
+    flex-shrink: 0;
+    margin-top: 2px;
+    margin-left: auto;
+  }
+
+  /* Subtle Motion */
+  @keyframes heroRise6 {
+    from {
+      opacity: 0;
+      transform: translateY(6px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes heroRise8 {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .hero-seq-eyebrow {
+    animation: heroRise6 360ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
+
+  .hero-seq-title {
+    animation: heroRise8 400ms cubic-bezier(0.22, 1, 0.36, 1) 40ms forwards;
+  }
+
+  .hero-seq-desc {
+    animation: heroRise8 400ms cubic-bezier(0.22, 1, 0.36, 1) 80ms forwards;
+  }
+
+  .hero-seq-cta {
+    animation: heroRise8 400ms cubic-bezier(0.22, 1, 0.36, 1) 120ms forwards;
+  }
+
+  .mobile-hero-stats-card {
+    animation: heroRise8 420ms cubic-bezier(0.22, 1, 0.36, 1) 160ms forwards;
+  }
+
+  /* ============================================================
+     SECTION 3: ABOUT FXTRADE - MOBILE REDESIGN (Reference Match)
+     ============================================================ */
+  .home-about-section {
+    padding-top: 38px !important;
+    padding-bottom: 38px !important;
+    background-color: #ffffff !important;
+  }
+
+  .home-about-section .container-custom {
+    padding-left: 18px !important;
+    padding-right: 18px !important;
+  }
+
+  /* Flexible column stacking allowing CSS reorder via display: contents */
+  .about-top-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0 !important;
+  }
+
+  .about-content-col {
+    display: contents !important;
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+  }
+
+  /* 1. Green Eyebrow with leading dash */
+  .about-eyebrow {
+    order: 1 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    color: #16a34a !important;
+    font-size: 11.5px !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.06em !important;
+    text-transform: uppercase !important;
+    margin-bottom: 12px !important;
+  }
+
+  .about-eyebrow-dash {
+    display: inline-block !important;
+    width: 14px !important;
+    height: 2px !important;
+    background-color: #16a34a !important;
+    border-radius: 1px !important;
+    flex-shrink: 0 !important;
+  }
+
+  /* 2. Bold Two-Line Heading */
+  .about-heading {
+    order: 2 !important;
+    font-size: clamp(26px, 7vw, 30px) !important;
+    font-weight: 800 !important;
+    color: #0b192c !important;
+    line-height: 1.15 !important;
+    letter-spacing: -0.025em !important;
+    margin-bottom: 14px !important;
+    text-align: left !important;
+    max-width: 100% !important;
+  }
+
+  .about-mobile-br {
+    display: block !important;
+  }
+
+  /* 3. Concise One-Sentence Paragraph */
+  .about-paragraph {
+    order: 3 !important;
+    font-size: 13.5px !important;
+    line-height: 1.6 !important;
+    color: #475569 !important;
+    margin-bottom: 18px !important;
+    text-align: left !important;
+    max-width: 100% !important;
+  }
+
+  .about-desc-desktop {
+    display: none !important;
+  }
+
+  /* 4. HQ Corporate Building Image Card */
+  .about-image-card {
+    order: 4 !important;
+    width: 100% !important;
+    border-radius: 16px !important;
+    overflow: hidden !important;
+    border: 1px solid rgba(226, 232, 240, 0.85) !important;
+    box-shadow: 0 4px 18px rgba(15, 23, 42, 0.08) !important;
+    margin-bottom: 16px !important;
+    background-color: #f8fafc !important;
+  }
+
+  .about-hq-img {
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 16 / 10 !important;
+    object-fit: cover !important;
+    border-radius: 16px !important;
+    display: block !important;
+  }
+
+  /* 5. Full-Width Green CTA Button */
+  .about-btn-wrap {
+    order: 5 !important;
+    width: 100% !important;
+    margin-bottom: 24px !important;
+    display: block !important;
   }
 
   .btn-about-green {
-    width: 100%;
-    justify-content: center;
+    width: 100% !important;
+    height: 50px !important;
+    padding: 0 1.25rem !important;
+    background-color: #16a34a !important;
+    color: #ffffff !important;
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    border-radius: 10px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    text-decoration: none !important;
+    box-shadow: 0 4px 14px rgba(22, 163, 74, 0.28) !important;
+    transition: background-color 200ms ease, transform 180ms ease !important;
+    box-sizing: border-box !important;
   }
 
+  .btn-about-green:hover,
+  .btn-about-green:active {
+    background-color: #15803d !important;
+    color: #ffffff !important;
+  }
+
+  /* 6. Single White Card with 2x2 Stats Grid */
   .about-stats-row {
-    grid-template-columns: 1fr;
-    gap: 1.15rem;
-    margin-top: 2rem;
-    padding: 1.25rem 0;
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    background: #ffffff !important;
+    border: 1px solid rgba(226, 232, 240, 0.95) !important;
+    border-radius: 16px !important;
+    box-shadow: 0 4px 20px rgba(15, 23, 42, 0.06) !important;
+    margin-top: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .about-stat-divider {
+    display: none !important;
   }
 
   .about-stat-item {
-    justify-content: flex-start;
-    padding: 0.25rem 0;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    padding: 16px 14px !important;
+    gap: 12px !important;
+    box-sizing: border-box !important;
+    min-height: 84px !important;
+    cursor: default;
   }
+
+  .about-stat-q1 {
+    border-right: 1px solid #f1f5f9 !important;
+    border-bottom: 1px solid #f1f5f9 !important;
+  }
+
+  .about-stat-q2 {
+    border-bottom: 1px solid #f1f5f9 !important;
+  }
+
+  .about-stat-q3 {
+    border-right: 1px solid #f1f5f9 !important;
+  }
+
+  .about-stat-q4 {
+    border: none !important;
+  }
+
+  .about-stat-icon-circle {
+    width: 38px !important;
+    height: 38px !important;
+    border-radius: 50% !important;
+    background-color: #f0fdf4 !important;
+    border: 1px solid #dcfce7 !important;
+    color: #16a34a !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-shrink: 0 !important;
+  }
+
+  .about-stat-icon-circle .stat-lucide-icon {
+    width: 19px !important;
+    height: 19px !important;
+    stroke-width: 1.8 !important;
+  }
+
+  .about-stat-details {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    min-width: 0 !important;
+  }
+
+  .about-stat-num {
+    font-size: 21px !important;
+    font-weight: 800 !important;
+    color: #0b192c !important;
+    line-height: 1.1 !important;
+    letter-spacing: -0.02em !important;
+  }
+
+  .about-stat-label {
+    font-size: 10.5px !important;
+    font-weight: 500 !important;
+    color: #64748b !important;
+    line-height: 1.25 !important;
+    margin-top: 2px !important;
+    max-width: 82px !important;
+    text-wrap: balance !important;
+  }
+
+  /* ============================================================
+     SECTION 5: CORE CAPABILITIES - MOBILE SLIDER (Reference Match)
+     ============================================================ */
+  .home-capabilities-section {
+    padding: 38px 0 42px 0 !important;
+    overflow: hidden !important;
+  }
+
+  .capabilities-header-row {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 10px !important;
+    margin-bottom: 22px !important;
+  }
+
+  .capabilities-eyebrow-wrap {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    margin-bottom: 10px !important;
+  }
+
+  .capabilities-eyebrow-line {
+    width: 14px !important;
+    height: 2px !important;
+    background-color: #16a34a !important;
+    border-radius: 1px !important;
+  }
+
+  .capabilities-eyebrow-text {
+    font-size: 11px !important;
+    font-weight: 700 !important;
+    color: #16a34a !important;
+    letter-spacing: 0.06em !important;
+  }
+
+  .capabilities-main-title {
+    font-size: clamp(25px, 6.8vw, 29px) !important;
+    font-weight: 800 !important;
+    color: #0b192c !important;
+    line-height: 1.16 !important;
+    letter-spacing: -0.025em !important;
+    margin: 0 !important;
+    max-width: 100% !important;
+  }
+
+  .capabilities-header-link {
+    font-size: 13.5px !important;
+    font-weight: 700 !important;
+    color: #0b192c !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    margin-top: 2px !important;
+    text-decoration: none !important;
+  }
+
+  .capabilities-header-link .capabilities-header-arrow {
+    color: #16a34a !important;
+  }
+
+  /* Horizontal sliding carousel track - exactly 1 card per view */
+  .capabilities-cards-grid {
+    display: flex !important;
+    flex-direction: row !important;
+    grid-template-columns: none !important;
+    gap: 20px !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    scroll-snap-type: x mandatory !important;
+    -webkit-overflow-scrolling: touch !important;
+    scrollbar-width: none !important;
+    padding: 6px 0 16px 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .capabilities-cards-grid::-webkit-scrollbar {
+    display: none !important;
+  }
+
+  /* Exactly ONE complete card shown at a time (100% width) - no half-cut card peeking */
+  .capability-card {
+    flex: 0 0 100% !important;
+    width: 100% !important;
+    min-width: 100% !important;
+    max-width: 100% !important;
+    scroll-snap-align: center !important;
+    scroll-snap-stop: always !important;
+    border-radius: 18px !important;
+    padding: 12px !important;
+    background-color: #ffffff !important;
+    border: 1px solid rgba(226, 232, 240, 0.95) !important;
+    box-shadow: 0 4px 18px rgba(15, 23, 42, 0.06) !important;
+    box-sizing: border-box !important;
+    transform: none !important;
+  }
+
+  .capability-media-wrap {
+    width: 100% !important;
+    aspect-ratio: 16 / 11 !important;
+    border-radius: 14px !important;
+    position: relative !important;
+    overflow: hidden !important;
+  }
+
+  .capability-thumb-img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    border-radius: 14px !important;
+  }
+
+  .capability-badge {
+    position: absolute !important;
+    bottom: 10px !important;
+    left: 10px !important;
+    width: 40px !important;
+    height: 40px !important;
+    border-radius: 10px !important;
+    background-color: #ffffff !important;
+    border: 1px solid rgba(226, 232, 240, 0.9) !important;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.12) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    color: #0b192c !important;
+    z-index: 2 !important;
+  }
+
+  .capability-body {
+    padding: 14px 6px 6px 6px !important;
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  .capability-title {
+    font-size: 18px !important;
+    font-weight: 800 !important;
+    color: #0b192c !important;
+    line-height: 1.25 !important;
+    margin: 0 0 6px 0 !important;
+  }
+
+  .capability-desc {
+    font-size: 13px !important;
+    line-height: 1.5 !important;
+    color: #64748b !important;
+    margin: 0 0 16px 0 !important;
+  }
+
+  .capability-learn-link {
+    font-size: 13.5px !important;
+    font-weight: 700 !important;
+    color: #16a34a !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    text-decoration: none !important;
+    margin-top: auto !important;
+  }
+
+  .capability-learn-link:hover,
+  .capability-learn-link:active {
+    color: #15803d !important;
+  }
+
+  /* Slider Controls: Arrows + Dots */
+  .capabilities-slider-controls {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 18px !important;
+    margin-top: 8px !important;
+    padding: 4px 0 !important;
+  }
+
+  .cap-slider-arrow {
+    width: 36px !important;
+    height: 36px !important;
+    border-radius: 50% !important;
+    background: #f8fafc !important;
+    border: 1px solid #e2e8f0 !important;
+    color: #475569 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    cursor: pointer !important;
+    transition: all 180ms ease !important;
+    padding: 0 !important;
+  }
+
+  .cap-slider-arrow:active {
+    background: #f1f5f9 !important;
+    transform: scale(0.94) !important;
+  }
+
+  .cap-slider-arrow:disabled {
+    opacity: 0.3 !important;
+    cursor: not-allowed !important;
+  }
+
+  .cap-slider-dots {
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+  }
+
+  .cap-dot {
+    width: 7px !important;
+    height: 7px !important;
+    border-radius: 50% !important;
+    background-color: #cbd5e1 !important;
+    border: none !important;
+    padding: 0 !important;
+    cursor: pointer !important;
+    transition: all 220ms ease !important;
+  }
+
+  .cap-dot.active {
+    background-color: #16a34a !important;
+    width: 9px !important;
+    height: 9px !important;
+  }
+
+  /* ============================================================
+     SECTION 6: OUR LEADERSHIP - MOBILE REDESIGN (Reference Match)
+     ============================================================ */
+  .home-leadership-section {
+    padding: 38px 0 42px 0 !important;
+    background-color: #f8fafc !important;
+  }
+
+  .leadership-header-block {
+    margin-bottom: 22px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+
+  .leadership-eyebrow-wrap {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    margin-bottom: 10px !important;
+  }
+
+  .leadership-eyebrow-line {
+    width: 14px !important;
+    height: 2px !important;
+    background-color: #16a34a !important;
+    border-radius: 1px !important;
+  }
+
+  .leadership-eyebrow-text {
+    font-size: 11px !important;
+    font-weight: 700 !important;
+    color: #16a34a !important;
+    letter-spacing: 0.06em !important;
+  }
+
+  .leadership-main-title {
+    font-size: clamp(25px, 6.8vw, 29px) !important;
+    font-weight: 800 !important;
+    color: #0b192c !important;
+    line-height: 1.16 !important;
+    letter-spacing: -0.025em !important;
+    margin: 0 0 8px 0 !important;
+    max-width: 100% !important;
+  }
+
+  .leadership-mobile-br {
+    display: block !important;
+  }
+
+  .leadership-header-link {
+    font-size: 13.5px !important;
+    font-weight: 700 !important;
+    color: #0b192c !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    margin-top: 2px !important;
+    text-decoration: none !important;
+  }
+
+  .leadership-header-link .leadership-header-arrow {
+    color: #16a34a !important;
+  }
+
+  /* 2-Column Grid for Leaders + Full-width Quote Below */
+  .home-leadership-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 12px !important;
+    align-items: stretch !important;
+  }
+
+  /* Compact 2-Column Leader Card */
+  .leadership-card {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    background-color: #ffffff !important;
+    border: 1px solid rgba(226, 232, 240, 0.95) !important;
+    border-radius: 16px !important;
+    padding: 10px !important;
+    gap: 10px !important;
+    box-shadow: 0 4px 16px rgba(15, 23, 42, 0.05) !important;
+    box-sizing: border-box !important;
+    height: 100% !important;
+    transform: none !important;
+  }
+
+  .leader-portrait-wrap {
+    width: 100% !important;
+    aspect-ratio: 1 / 1.18 !important;
+    height: auto !important;
+    border-radius: 12px !important;
+    overflow: hidden !important;
+    background-color: #f1f5f9 !important;
+    flex-shrink: 0 !important;
+  }
+
+  .leader-portrait-img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: top center !important;
+    display: block !important;
+  }
+
+  .leader-card-info {
+    display: flex !important;
+    flex-direction: column !important;
+    flex-grow: 1 !important;
+    width: 100% !important;
+    padding: 2px 2px 4px 2px !important;
+  }
+
+  .leader-name {
+    font-size: 14.5px !important;
+    font-weight: 800 !important;
+    color: #0b192c !important;
+    line-height: 1.25 !important;
+    margin: 0 0 3px 0 !important;
+  }
+
+  .leader-title {
+    font-size: 11.5px !important;
+    font-weight: 700 !important;
+    color: #16a34a !important;
+    line-height: 1.25 !important;
+    margin-bottom: 6px !important;
+    display: block !important;
+  }
+
+  .leader-desc {
+    font-size: 11px !important;
+    line-height: 1.45 !important;
+    color: #64748b !important;
+    margin-bottom: 12px !important;
+    flex-grow: 1 !important;
+  }
+
+  .leader-read-more {
+    font-size: 12px !important;
+    font-weight: 700 !important;
+    color: #16a34a !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 4px !important;
+    background: none !important;
+    border: none !important;
+    padding: 0 !important;
+    cursor: pointer !important;
+    margin-top: auto !important;
+  }
+
+  .leader-read-arrow {
+    color: #16a34a !important;
+  }
+
+  /* Full-Width Quote Card Underneath the 2 Cards */
+  .leadership-quote-card {
+    grid-column: 1 / -1 !important;
+    background-color: #ffffff !important;
+    border: 1px solid rgba(226, 232, 240, 0.95) !important;
+    border-radius: 16px !important;
+    padding: 16px 18px !important;
+    box-shadow: 0 4px 16px rgba(15, 23, 42, 0.05) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    margin-top: 4px !important;
+    box-sizing: border-box !important;
+    transform: none !important;
+  }
+
+  .quote-icon-wrap {
+    margin-bottom: 8px !important;
+    display: flex !important;
+  }
+
+  .quote-icon {
+    width: 22px !important;
+    height: 22px !important;
+    color: #16a34a !important;
+    opacity: 1 !important;
+  }
+
+  .quote-text {
+    font-size: 13.5px !important;
+    font-style: normal !important;
+    font-weight: 700 !important;
+    line-height: 1.45 !important;
+    color: #0b192c !important;
+    margin: 0 0 10px 0 !important;
+  }
+
+  .quote-author-wrap {
+    display: flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+  }
+
+  .quote-dash {
+    width: 14px !important;
+    height: 2px !important;
+    background-color: #94a3b8 !important;
+    border-radius: 1px !important;
+  }
+
+  .quote-author {
+    font-size: 11.5px !important;
+    font-weight: 600 !important;
+    color: #475569 !important;
+  }
+}
+
+/* Micro-screen optimization <= 360px */
+@media (max-width: 360px) {
+  .home-hero-section {
+    min-height: 670px;
+    height: 690px !important;
+  }
+
+  .hero-left {
+    padding: 30px 14px 24px 14px !important;
+  }
+
+  .hero-eyebrow {
+    font-size: 10px !important;
+    margin-bottom: 16px !important;
+  }
+
+  .hero-title {
+    font-size: 30px !important;
+    max-width: 320px;
+  }
+
+  .hero-description {
+    font-size: 14px !important;
+    max-width: 320px;
+  }
+
+  .btn-hero-primary {
+    height: 50px !important;
+    font-size: 14.5px !important;
+  }
+
+  .btn-hero-secondary {
+    height: 48px !important;
+    font-size: 14.5px !important;
+  }
+
+  .mobile-hero-stats-card {
+    padding: 12px 6px !important;
+  }
+
+  .mobile-stat-val {
+    font-size: 18px !important;
+  }
+
+  .mobile-stat-lbl {
+    font-size: 8.5px !important;
+  }
+
+  .pill-feature-card {
+    padding: 10px 8px !important;
+    gap: 6px !important;
+  }
+
+  .pill-feature-title {
+    font-size: 11px !important;
+  }
+
+  .pill-feature-sub {
+    font-size: 9px !important;
+  }
+
+  .about-stat-item {
+    padding: 13px 8px !important;
+    gap: 8px !important;
+  }
+
+  .about-stat-icon-circle {
+    width: 34px !important;
+    height: 34px !important;
+  }
+
+  .about-stat-icon-circle .stat-lucide-icon {
+    width: 17px !important;
+    height: 17px !important;
+  }
+
+  .about-stat-num {
+    font-size: 19px !important;
+  }
+
+  .about-stat-label {
+    font-size: 9.5px !important;
+    max-width: 72px !important;
+  }
+
+  .home-leadership-grid {
+    gap: 8px !important;
+  }
+
+  .leadership-card {
+    padding: 7px !important;
+  }
+
+  .leader-name {
+    font-size: 13px !important;
+  }
+
+  .leader-title {
+    font-size: 10.5px !important;
+  }
+
+  .leader-desc {
+    font-size: 9.8px !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-seq-eyebrow,
+  .hero-seq-title,
+  .hero-seq-desc,
+  .hero-seq-cta,
+  .btn-hero-primary,
+  .btn-hero-secondary,
+  .btn-hero-primary .btn-hero-arrow,
+  .pill-feature-card,
+  .pill-feature-arrow {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+  }
+}
+
+@media (max-width: 640px) {
 
   .home-trade-finance-section {
     padding: 44px 0;
@@ -2011,41 +3245,6 @@
 
   .trade-checklist-item {
     font-size: 0.92rem;
-  }
-
-  .home-capabilities-section {
-    padding: 44px 0;
-  }
-
-  .capabilities-header-row {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.75rem;
-  }
-
-  .capabilities-main-title {
-    font-size: clamp(24px, 6vw, 32px);
-  }
-
-  .capabilities-cards-grid {
-    grid-template-columns: 1fr;
-    gap: 1.25rem;
-  }
-
-  .capability-card {
-    padding: 10px;
-  }
-
-  .leadership-card {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 1rem;
-    gap: 1rem;
-  }
-
-  .leader-portrait-wrap {
-    width: 100%;
-    height: 240px;
   }
 
   .leader-modal-body {
@@ -2216,9 +3415,5 @@
 @media (max-width: 360px) {
   .why-choose-pillars-grid {
     grid-template-columns: 1fr;
-  }
-
-  .about-stat-num {
-    font-size: 32px;
   }
 }
