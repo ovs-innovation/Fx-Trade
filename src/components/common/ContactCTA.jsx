@@ -71,7 +71,10 @@ export default function ContactCTA({
               <div className="cta-input-wrap">
                 <Mail size={18} className="cta-input-icon" />
                 <input
+                  id="newsletter-email"
+                  name="email"
                   type="email"
+                  autoComplete="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Email Address"

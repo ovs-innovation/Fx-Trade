@@ -302,6 +302,7 @@ export default function Contact() {
                           id="contact-name"
                           name="name"
                           type="text"
+                          autoComplete="name"
                           value={formData.name}
                           onChange={handleChange}
                           placeholder="Full Name"
@@ -320,6 +321,7 @@ export default function Contact() {
                           id="contact-email"
                           name="email"
                           type="email"
+                          autoComplete="email"
                           value={formData.email}
                           onChange={handleChange}
                           placeholder="Email Address"
@@ -341,6 +343,7 @@ export default function Contact() {
                           id="contact-company"
                           name="company"
                           type="text"
+                          autoComplete="organization"
                           value={formData.company}
                           onChange={handleChange}
                           placeholder="Company Name"
@@ -363,6 +366,7 @@ export default function Contact() {
                             id="contact-phone"
                             name="phone"
                             type="tel"
+                            autoComplete="tel"
                             value={formData.phone}
                             onChange={handleChange}
                             placeholder="Phone Number"

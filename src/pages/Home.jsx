@@ -696,7 +696,9 @@ export default function Home() {
                           <label className="sr-only" htmlFor="fullName">Full Name</label>
                           <input
                             id="fullName"
+                            name="name"
                             type="text"
+                            autoComplete="name"
                             required
                             placeholder="Full Name *"
                             className="form-control"
@@ -709,7 +711,9 @@ export default function Home() {
                           <label className="sr-only" htmlFor="email">Email Address</label>
                           <input
                             id="email"
+                            name="email"
                             type="email"
+                            autoComplete="email"
                             required
                             placeholder="Email Address *"
                             className="form-control"
@@ -722,7 +726,9 @@ export default function Home() {
                           <label className="sr-only" htmlFor="company">Company Name</label>
                           <input
                             id="company"
+                            name="company"
                             type="text"
+                            autoComplete="organization"
                             placeholder="Company Name"
                             className="form-control"
                             value={formData.company}
