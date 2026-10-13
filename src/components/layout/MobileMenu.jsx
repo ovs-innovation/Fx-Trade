@@ -17,7 +17,7 @@ export default function MobileMenu({ isOpen, onClose }) {
         {/* Drawer Header */}
         <div className="mobile-drawer-top">
           <Link to="/" onClick={onClose} className="drawer-logo">
-            <img src={fxtradeLogo} alt="FxTrade Consulting Pvt. Ltd." height="38" />
+            <img src={fxtradeLogo} alt="FxTrade Consulting Pvt. Ltd." height="44" />
           </Link>
           <button onClick={onClose} className="drawer-close-btn" aria-label="Close navigation menu">
             <X size={22} />

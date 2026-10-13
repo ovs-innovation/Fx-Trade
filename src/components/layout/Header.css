@@ -7,7 +7,7 @@
   top: 0;
   left: 0;
   right: 0;
-  height: 70px;
+  height: 76px;
   background-color: #ffffff;
   border-bottom: 1px solid var(--border-light);
   box-shadow: 0 1px 3px rgba(15, 23, 42, 0.03);
@@ -26,7 +26,7 @@
 }
 
 .site-header.is-scrolled {
-  height: 62px;
+  height: 66px;
   background-color: rgba(255, 255, 255, 0.96);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
@@ -51,10 +51,14 @@
 }
 
 .logo-img {
-  height: 48px;
+  height: 54px;
   width: auto;
   object-fit: contain;
-  transition: transform 180ms ease;
+  transition: transform 180ms ease, height 240ms ease;
+}
+
+.site-header.is-scrolled .logo-img {
+  height: 48px;
 }
 
 .brand-logo:hover .logo-img {
@@ -255,11 +259,11 @@
 
 @media (max-width: 767px) {
   .site-header {
-    height: 68px !important;
+    height: 72px !important;
   }
 
   .site-header.is-scrolled {
-    height: 66px !important;
+    height: 68px !important;
   }
 
   .header-inner {
@@ -268,7 +272,7 @@
   }
 
   .logo-img {
-    height: 44px !important;
+    height: 50px !important;
     width: auto !important;
     object-fit: contain !important;
   }

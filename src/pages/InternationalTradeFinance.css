@@ -469,3 +469,362 @@
     padding: 2.25rem 1.75rem;
   }
 }
+
+/* ============================================================
+   MOBILE RESPONSIVE 2x2 GRID REDESIGN & MICRO-ANIMATIONS (<= 767px)
+   ============================================================ */
+@media (max-width: 767px) {
+  .section-padding {
+    padding-top: 2.25rem;
+    padding-bottom: 2.25rem;
+  }
+
+  .section-padding-sm {
+    padding-top: 1.75rem;
+    padding-bottom: 1.75rem;
+  }
+
+  .itf-hero-grid,
+  .itf-network-grid {
+    gap: 1.5rem;
+  }
+
+  /* Compact Corporate Photos */
+  .corporate-photo {
+    min-height: 190px;
+    max-height: 230px;
+  }
+
+  .corporate-image-card {
+    border-radius: 16px;
+  }
+
+  .image-accent-badge,
+  .network-visual-badge {
+    bottom: 12px;
+    left: 12px;
+    font-size: 0.74rem;
+    padding: 6px 10px;
+    border-radius: 8px;
+    gap: 0.35rem;
+  }
+
+  .image-accent-badge svg,
+  .network-visual-badge svg {
+    width: 15px;
+    height: 15px;
+  }
+
+  /* Section Typography */
+  .section-title {
+    font-size: clamp(1.4rem, 5.5vw, 1.75rem);
+    line-height: 1.25;
+    margin-bottom: 0.5rem;
+  }
+
+  .section-lead {
+    font-size: 0.9rem;
+    line-height: 1.55;
+  }
+
+  .section-subtitle {
+    font-size: 0.86rem;
+    line-height: 1.5;
+  }
+
+  .body-text {
+    font-size: 0.85rem;
+    line-height: 1.55;
+  }
+
+  /* 2x3 Core Checklist Grid */
+  .itf-checklist-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    margin: 1.25rem 0 1.5rem;
+  }
+
+  .itf-check-item {
+    padding: 10px 8px;
+    background: var(--surface-alt);
+    border: 1px solid var(--border-light);
+    border-radius: 10px;
+    font-size: 0.74rem;
+    line-height: 1.35;
+    gap: 0.45rem;
+    transition: transform 180ms ease, border-color 180ms ease;
+  }
+
+  .itf-check-item:active {
+    transform: scale(0.97);
+    border-color: rgba(95, 165, 45, 0.5);
+    background: rgba(95, 165, 45, 0.06);
+  }
+
+  .itf-check-icon {
+    width: 15px;
+    height: 15px;
+    margin-top: 0.1rem;
+  }
+
+  .itf-hero-action .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* 2x2 WHY CHOOSE FXTRADE STRIP */
+  .why-strip-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-top: 1.75rem;
+  }
+
+  .why-strip-card {
+    padding: 14px 11px;
+    border-radius: 14px;
+    transition: transform 200ms cubic-bezier(0.22, 1, 0.36, 1),
+                box-shadow 200ms ease,
+                border-color 200ms ease;
+  }
+
+  .why-strip-card:active {
+    transform: scale(0.97);
+    border-color: rgba(95, 165, 45, 0.5);
+    box-shadow: 0 4px 14px rgba(95, 165, 45, 0.12);
+  }
+
+  .why-strip-icon-box {
+    width: 34px;
+    height: 34px;
+    border-radius: 8px;
+    margin-bottom: 0.65rem;
+  }
+
+  .why-strip-icon {
+    width: 18px;
+    height: 18px;
+  }
+
+  .why-strip-title {
+    font-size: 0.88rem;
+    line-height: 1.25;
+    margin-bottom: 0.35rem;
+  }
+
+  .why-strip-desc {
+    font-size: 0.74rem;
+    line-height: 1.45;
+  }
+
+  /* 2x2 INTERNATIONAL TRADE SOLUTIONS GRID */
+  .itf-services-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-top: 1.75rem;
+  }
+
+  .itf-service-card {
+    padding: 14px 11px;
+    border-radius: 14px;
+    transition: transform 200ms cubic-bezier(0.22, 1, 0.36, 1),
+                box-shadow 200ms ease,
+                border-color 200ms ease;
+  }
+
+  .itf-service-card:active {
+    transform: scale(0.97);
+    border-color: rgba(95, 165, 45, 0.5);
+    box-shadow: 0 4px 14px rgba(95, 165, 45, 0.12);
+  }
+
+  .itf-card-top {
+    margin-bottom: 0.65rem;
+  }
+
+  .itf-card-icon-wrap {
+    width: 34px;
+    height: 34px;
+    border-radius: 8px;
+  }
+
+  .itf-card-icon {
+    width: 18px;
+    height: 18px;
+  }
+
+  .itf-card-num {
+    font-size: 0.72rem;
+  }
+
+  .itf-card-title {
+    font-size: 0.88rem;
+    line-height: 1.25;
+    margin-bottom: 0.35rem;
+  }
+
+  .itf-card-desc {
+    font-size: 0.74rem;
+    line-height: 1.45;
+  }
+
+  /* 3-Column Stats Row in Network Section */
+  .itf-stats-row {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 8px;
+    margin-top: 1.5rem;
+    padding-top: 1.25rem;
+  }
+
+  .itf-stat-box {
+    padding: 10px 6px;
+    background: #ffffff;
+    border-radius: 10px;
+    border: 1px solid var(--border-light);
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+    transition: transform 180ms ease;
+  }
+
+  .itf-stat-box:active {
+    transform: scale(0.96);
+  }
+
+  .itf-stat-val {
+    font-size: 1.22rem;
+    line-height: 1.15;
+  }
+
+  .itf-stat-lbl {
+    font-size: 0.65rem;
+    line-height: 1.25;
+  }
+
+  /* Dark Global Commerce Assurance Band */
+  .itf-assurance-band {
+    padding: 2.5rem 0;
+  }
+
+  .assurance-header {
+    margin: 0 auto 1.75rem;
+  }
+
+  .assurance-title {
+    font-size: 1.35rem;
+  }
+
+  .assurance-subtitle {
+    font-size: 0.86rem;
+    line-height: 1.5;
+  }
+
+  .assurance-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .assurance-card {
+    padding: 14px 11px;
+    border-radius: 14px;
+    transition: transform 200ms cubic-bezier(0.22, 1, 0.36, 1),
+                background-color 200ms ease,
+                border-color 200ms ease;
+  }
+
+  .assurance-card:active {
+    transform: scale(0.97);
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(95, 165, 45, 0.6);
+  }
+
+  .assurance-icon {
+    width: 20px;
+    height: 20px;
+    margin-bottom: 0.65rem;
+  }
+
+  .assurance-card h4 {
+    font-size: 0.88rem;
+    line-height: 1.25;
+    margin-bottom: 0.35rem;
+  }
+
+  .assurance-card p {
+    font-size: 0.74rem;
+    line-height: 1.45;
+  }
+
+  /* 3rd assurance card spans 2 columns */
+  .assurance-card:nth-child(3):last-child {
+    grid-column: span 2;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 12px;
+    align-items: center;
+  }
+
+  .assurance-card:nth-child(3):last-child .assurance-icon {
+    margin-bottom: 0;
+  }
+
+  /* Final CTA Strip */
+  .itf-cta-strip {
+    padding: 2.25rem 0;
+  }
+
+  .itf-cta-content {
+    padding: 1.75rem 1.25rem;
+    border-radius: 16px;
+    gap: 1.25rem;
+  }
+
+  .itf-cta-eyebrow {
+    font-size: 0.72rem;
+  }
+
+  .itf-cta-title {
+    font-size: 1.35rem;
+    line-height: 1.25;
+  }
+
+  .itf-cta-subtitle {
+    font-size: 0.86rem;
+    line-height: 1.5;
+  }
+
+  .itf-cta-actions {
+    width: 100%;
+  }
+
+  .itf-cta-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 380px) {
+  .itf-checklist-grid,
+  .why-strip-grid,
+  .itf-services-grid,
+  .assurance-grid {
+    gap: 8px;
+  }
+
+  .why-strip-card,
+  .itf-service-card,
+  .assurance-card {
+    padding: 12px 9px;
+  }
+
+  .why-strip-title,
+  .itf-card-title,
+  .assurance-card h4 {
+    font-size: 0.82rem;
+  }
+
+  .why-strip-desc,
+  .itf-card-desc,
+  .assurance-card p {
+    font-size: 0.7rem;
+  }
+}
+

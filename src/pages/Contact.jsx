@@ -14,6 +14,7 @@ import {
 } from "lucide-react";
 import PageShell from "../components/layout/PageShell";
 import Container from "../components/common/Container";
+import WhatsAppBanner from "../components/common/WhatsAppBanner";
 import { submitContactInquiry } from "../services/contactService";
 import useScrollReveal from "../hooks/useScrollReveal";
 
@@ -555,6 +556,15 @@ export default function Contact() {
             </div>
           </Container>
         </section>
+
+        {/* ========================================================
+            WHATSAPP DIRECT CONSULTATION BANNER
+            ======================================================== */}
+        <WhatsAppBanner
+          title="You Can Also Connect on WhatsApp"
+          subtitle="Message our advisory team directly on WhatsApp for instant guidance on Trade Finance, Forex & Debt Syndication."
+          phone="+91 9834604137"
+        />
 
         {/* ========================================================
             SECTION 04 — FREQUENTLY ASKED QUESTIONS (FAQ)

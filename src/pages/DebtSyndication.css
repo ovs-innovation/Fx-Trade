@@ -368,3 +368,276 @@
     padding: 2.25rem 1.75rem;
   }
 }
+
+/* ============================================================
+   MOBILE RESPONSIVE 2x2 GRID REDESIGN & MICRO-ANIMATIONS (<= 767px)
+   ============================================================ */
+@media (max-width: 767px) {
+  .section-padding {
+    padding-top: 2.25rem;
+    padding-bottom: 2.25rem;
+  }
+
+  .ds-intro-grid,
+  .ds-how-grid {
+    gap: 1.5rem;
+  }
+
+  /* Compact Corporate Photos */
+  .corporate-photo {
+    min-height: 190px;
+    max-height: 230px;
+  }
+
+  .corporate-image-card {
+    border-radius: 16px;
+  }
+
+  .image-accent-badge {
+    bottom: 12px;
+    left: 12px;
+    font-size: 0.74rem;
+    padding: 6px 10px;
+    border-radius: 8px;
+    gap: 0.35rem;
+  }
+
+  .image-accent-badge svg {
+    width: 15px;
+    height: 15px;
+  }
+
+  /* Section Typography */
+  .section-title {
+    font-size: clamp(1.4rem, 5.5vw, 1.75rem);
+    line-height: 1.25;
+    margin-bottom: 0.5rem;
+  }
+
+  .section-lead {
+    font-size: 0.9rem;
+    line-height: 1.55;
+  }
+
+  .section-subtitle {
+    font-size: 0.86rem;
+    line-height: 1.5;
+  }
+
+  .body-text {
+    font-size: 0.85rem;
+    line-height: 1.55;
+  }
+
+  /* Perks List */
+  .ds-perks-list {
+    margin: 1.25rem 0 1.5rem;
+    gap: 0.5rem;
+  }
+
+  .ds-perk-item {
+    font-size: 0.82rem;
+    gap: 0.55rem;
+    padding: 8px 10px;
+    background: var(--surface-alt);
+    border: 1px solid var(--border-light);
+    border-radius: 10px;
+    transition: transform 180ms ease, background-color 180ms ease;
+  }
+
+  .ds-perk-item:active {
+    transform: scale(0.98);
+    background: rgba(95, 165, 45, 0.08);
+  }
+
+  .perk-icon {
+    width: 16px;
+    height: 16px;
+  }
+
+  .intro-actions .btn,
+  .ds-how-cta .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* 2x2 FINANCING VEHICLES GRID */
+  .ds-facilities-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-top: 1.75rem;
+  }
+
+  .ds-facility-card {
+    padding: 14px 11px;
+    border-radius: 14px;
+    transition: transform 200ms cubic-bezier(0.22, 1, 0.36, 1),
+                box-shadow 200ms ease,
+                border-color 200ms ease;
+  }
+
+  .ds-facility-card:active {
+    transform: scale(0.97);
+    border-color: rgba(95, 165, 45, 0.5);
+    box-shadow: 0 4px 14px rgba(95, 165, 45, 0.12);
+  }
+
+  .ds-card-top {
+    margin-bottom: 0.65rem;
+  }
+
+  .facility-icon-wrap {
+    width: 34px;
+    height: 34px;
+    border-radius: 8px;
+  }
+
+  .facility-icon {
+    width: 18px;
+    height: 18px;
+  }
+
+  .facility-card-num {
+    font-size: 0.72rem;
+  }
+
+  .facility-title {
+    font-size: 0.88rem;
+    line-height: 1.25;
+    margin-bottom: 0.35rem;
+  }
+
+  .facility-desc {
+    font-size: 0.74rem;
+    line-height: 1.45;
+  }
+
+  .ds-process-wrapper {
+    margin-top: 2.25rem;
+    padding-top: 2rem;
+  }
+
+  /* 2x2 STRATEGIC DARK WHY PARTNER GRID */
+  .ds-why-section {
+    padding: 2.25rem 0;
+  }
+
+  .ds-why-box {
+    padding: 1.75rem 1.25rem;
+    border-radius: 16px;
+  }
+
+  .ds-why-header {
+    margin: 0 auto 1.5rem;
+  }
+
+  .ds-why-title {
+    font-size: 1.35rem;
+  }
+
+  .ds-why-subtitle {
+    font-size: 0.86rem;
+    line-height: 1.5;
+  }
+
+  .ds-why-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px;
+  }
+
+  .ds-why-item {
+    padding: 14px 11px;
+    border-radius: 14px;
+    flex-direction: column;
+    gap: 0.65rem;
+    align-items: flex-start;
+    transition: transform 200ms cubic-bezier(0.22, 1, 0.36, 1),
+                background-color 200ms ease,
+                border-color 200ms ease;
+  }
+
+  .ds-why-item:active {
+    transform: scale(0.97);
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(95, 165, 45, 0.6);
+  }
+
+  .ds-why-icon-box {
+    width: 34px;
+    height: 34px;
+    border-radius: 8px;
+  }
+
+  .why-icon {
+    width: 18px;
+    height: 18px;
+  }
+
+  .ds-why-item h4 {
+    font-size: 0.88rem;
+    line-height: 1.25;
+    margin-bottom: 0.35rem;
+  }
+
+  .ds-why-item p {
+    font-size: 0.74rem;
+    line-height: 1.45;
+  }
+
+  /* Final CTA Strip */
+  .ds-cta-strip {
+    padding: 2.25rem 0;
+  }
+
+  .ds-cta-content {
+    padding: 1.75rem 1.25rem;
+    border-radius: 16px;
+    gap: 1.25rem;
+  }
+
+  .ds-cta-eyebrow {
+    font-size: 0.72rem;
+  }
+
+  .ds-cta-title {
+    font-size: 1.35rem;
+    line-height: 1.25;
+  }
+
+  .ds-cta-subtitle {
+    font-size: 0.86rem;
+    line-height: 1.5;
+  }
+
+  .ds-cta-actions {
+    width: 100%;
+  }
+
+  .ds-cta-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 380px) {
+  .ds-facilities-grid,
+  .ds-why-grid {
+    gap: 8px;
+  }
+
+  .ds-facility-card,
+  .ds-why-item {
+    padding: 12px 9px;
+  }
+
+  .facility-title,
+  .ds-why-item h4 {
+    font-size: 0.82rem;
+  }
+
+  .facility-desc,
+  .ds-why-item p {
+    font-size: 0.7rem;
+  }
+}
+

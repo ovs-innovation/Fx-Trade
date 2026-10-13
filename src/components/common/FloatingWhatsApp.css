@@ -1,0 +1,198 @@
+/* ===================================================
+   FLOATING ACTIONS DOCK — WHATSAPP & SCROLL TO TOP
+   =================================================== */
+
+.floating-actions-dock {
+  position: fixed;
+  bottom: 26px;
+  right: 26px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  z-index: 1200;
+  pointer-events: none;
+}
+
+.floating-actions-dock > * {
+  pointer-events: auto;
+}
+
+/* 1. Scroll-To-Top Circular Button */
+.floating-scroll-top-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  color: #22c55e;
+  border: 1.5px solid rgba(34, 197, 94, 0.35);
+  box-shadow: 0 4px 14px rgba(34, 197, 94, 0.12), 0 2px 6px rgba(15, 23, 42, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 220ms cubic-bezier(0.22, 1, 0.36, 1),
+              background-color 200ms ease,
+              border-color 200ms ease,
+              color 200ms ease,
+              box-shadow 220ms ease;
+  animation: floatPopIn 260ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.floating-scroll-top-btn:hover {
+  transform: translateY(-3px) scale(1.04);
+  background-color: #f0fdf4;
+  border-color: #16a34a;
+  color: #15803d;
+  box-shadow: 0 8px 22px rgba(22, 163, 74, 0.26), 0 2px 6px rgba(15, 23, 42, 0.06);
+}
+
+.floating-scroll-top-btn:active {
+  transform: scale(0.92);
+}
+
+/* 2. Floating WhatsApp Button */
+.floating-whatsapp-btn {
+  position: relative;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #25D366 0%, #1ea952 100%);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.42), 0 2px 6px rgba(0, 0, 0, 0.12);
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 240ms cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 240ms ease,
+              filter 180ms ease;
+  animation: floatPopIn 300ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.floating-whatsapp-btn:hover {
+  transform: scale(1.08) translateY(-2px);
+  box-shadow: 0 10px 28px rgba(37, 211, 102, 0.58), 0 4px 10px rgba(0, 0, 0, 0.16);
+  filter: brightness(1.03);
+}
+
+.floating-whatsapp-btn:active {
+  transform: scale(0.92);
+}
+
+.floating-whatsapp-svg {
+  width: 32px;
+  height: 32px;
+  position: relative;
+  z-index: 2;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.15));
+}
+
+/* WhatsApp Soft Breathing Pulse Ring */
+.floating-whatsapp-pulse {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: rgba(37, 211, 102, 0.45);
+  z-index: 1;
+  animation: waPulseRing 2.4s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+  pointer-events: none;
+}
+
+@keyframes waPulseRing {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.8;
+  }
+  60% {
+    transform: scale(1.4);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1.4);
+    opacity: 0;
+  }
+}
+
+@keyframes floatPopIn {
+  from {
+    opacity: 0;
+    transform: scale(0.6) translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* Interactive Tooltip Badge on Desktop Hover */
+.floating-whatsapp-tooltip {
+  position: absolute;
+  right: calc(100% + 14px);
+  top: 50%;
+  transform: translateY(-50%) translateX(6px);
+  background: #0f172a;
+  color: #ffffff;
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 6px 12px;
+  border-radius: 20px;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
+  transition: opacity 180ms ease, transform 180ms ease;
+  z-index: 3;
+}
+
+.floating-whatsapp-tooltip::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  transform: translateY(-50%);
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent transparent #0f172a;
+}
+
+.floating-whatsapp-btn:hover .floating-whatsapp-tooltip {
+  opacity: 1;
+  transform: translateY(-50%) translateX(0);
+}
+
+/* ===================================================
+   MOBILE RESPONSIVENESS (<= 767px)
+   =================================================== */
+@media (max-width: 767px) {
+  .floating-actions-dock {
+    bottom: 18px;
+    right: 16px;
+    gap: 9px;
+  }
+
+  .floating-whatsapp-btn {
+    width: 50px;
+    height: 50px;
+  }
+
+  .floating-whatsapp-svg {
+    width: 28px;
+    height: 28px;
+  }
+
+  .floating-scroll-top-btn {
+    width: 38px;
+    height: 38px;
+  }
+
+  .floating-scroll-top-btn svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  /* Hide floating tooltip on touch screens to prevent blocking content */
+  .floating-whatsapp-tooltip {
+    display: none;
+  }
+}

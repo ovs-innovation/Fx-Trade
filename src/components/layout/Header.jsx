@@ -73,7 +73,7 @@ export default function Header() {
               src={fxtradeLogo}
               alt="FxTrade Consulting Pvt. Ltd."
               className="logo-img"
-              height="46"
+              height="54"
             />
           </Link>
 

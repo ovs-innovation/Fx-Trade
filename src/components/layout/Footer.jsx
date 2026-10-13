@@ -29,7 +29,7 @@ export default function Footer() {
                   src={fxtradeLogo}
                   alt="FxTrade Consulting Pvt. Ltd."
                   className="footer-logo-img"
-                  height="38"
+                  height="44"
                 />
               </div>
             </Link>

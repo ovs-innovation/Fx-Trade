@@ -3,6 +3,7 @@ import { useLocation } from "react-router-dom";
 import Header from "./Header";
 import Footer from "./Footer";
 import ScrollToTop from "./ScrollToTop";
+import FloatingWhatsApp from "../common/FloatingWhatsApp";
 
 export default function PageShell({ children }) {
   const location = useLocation();
@@ -19,6 +20,7 @@ export default function PageShell({ children }) {
         {children}
       </main>
       <Footer />
+      <FloatingWhatsApp />
     </div>
   );
 }
